@@ -1,0 +1,122 @@
+.Couses{
+    margin-top:30px;
+    width:340px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+    border-radius: 2px;
+}
+
+.Courseimg{
+    width: 100%;
+    min-height: 170px;
+    max-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.coverimg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+.Coursedescription{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    height: 200px;
+    justify-content: space-around;
+}
+
+.Title{
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: rgb(248, 248, 248);
+    margin-left: 0px;
+    height: auto;
+}
+
+.CourseAuthor{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.note{
+    margin-left: 5px;
+    color: rgb(68, 68, 68);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.price{
+    margin-right: 5px;
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(25, 0, 255);
+    font-weight: 700;
+    font-size: 18px;
+
+}
+
+
+.CoursesFooter{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.FooterButton{
+    width: 95%;
+    height: 35px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: white;
+    border: solid 1px rgb(140, 140, 140);
+}
+
+.FooterButton{
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tocard{
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.822);
+    font-size: 14px;
+    margin-top: 5px;
+    
+}
+
+.details{
+    color: rgb(0, 122, 192);
+    background-color: rgba(255, 255, 255, 0.822);
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+
+.details:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 205, 125);
+}
+
+.tocard:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(146, 166, 255);
+}

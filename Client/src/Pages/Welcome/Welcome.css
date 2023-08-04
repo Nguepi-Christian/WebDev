@@ -1,0 +1,195 @@
+.welcome{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.welcomeTop{
+    height: 90vh;
+    width: 100%;
+    background-color: rgb(14, 14, 14);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.welcometopbar{
+    top: 0;
+    position: sticky;
+    height: 50px;
+    background-color: rgb(66, 66, 66);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.welcomelogin{
+    height:35px;
+    width: 100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+}
+.welcomelogin:hover{
+    background-color: blueviolet;
+    color: white;
+}
+
+.reg{
+    width: 120px;
+    background-color: rgb(255, 255, 255);
+}
+
+.welcomeude{
+    font-weight: 600;
+    font-size: 60px;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+
+.Startnow{
+    height: 50px;
+    width: 180px;
+    background-color: rgb(255, 140, 0);
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: italic;
+    color: black;
+    margin-bottom: 10px;
+}
+.Startnow:hover{
+    background-color: rgb(60, 255, 0);
+    border: solid 1px black;
+}
+
+
+/*Body*/
+.welcomeBody{
+    min-height: 100vh;
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 20px;
+}
+
+.divone{
+    margin-top: 55px;
+    background-color: rgb(255, 255, 255);
+}
+
+.onetitle{
+    font-size: 40px;
+    color: blue;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.onedesc{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    
+}
+
+.oneimg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.oneimgcontainer{
+    height: 300px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 20px;
+   
+}
+
+.lets{
+    border-radius: 0%;
+}
+.msg{
+    font-size: 24px;
+    font-style: italic;
+}
+
+@media all and (max-width: 650px){
+    .msg{
+        font-size: 5vw;
+       text-align: justify;
+    }
+    .welcomeBody{
+        width: 95%;
+    }
+
+    .onetitle{
+        font-size: 7.6vw;
+    }
+    .onedesc{
+        font-size: 3.8vw;
+    }
+
+    .oneimgcontainer{
+        height: 180px;
+        width: 100%;
+    }
+    .Startnow{
+        height: 32px;
+        width: 90px;
+        border-radius: 30px;
+        font-size: 2.5vw;
+    }
+
+    .welcomeude{
+        font-size: 8vw;
+    }
+    .welcomeTop{
+        height: 70vh;
+        width: 100%;
+    }
+    .welcometopbar{
+        top: 0;
+        position: sticky;
+        height: 30px;
+        background-color: rgb(66, 66, 66);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+    .welcomelogin{
+        height:25px;
+        width: 100px;
+        font-size: 14px;
+    }
+    .welcomelogin:hover{
+        background-color: blueviolet;
+        color: white;
+    }
+    
+    .reg{
+        width: 100px;
+        background-color: rgb(255, 255, 255);
+    }
+  
+}

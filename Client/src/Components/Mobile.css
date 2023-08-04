@@ -1,0 +1,197 @@
+@media all and (max-width: 650px){
+    /*Topbar*/
+    .udefree{
+        font-size:4vw;
+    }
+
+    .top{
+        
+    }
+    .topbar{
+        background-color: black;
+        height: 70vh;
+    }
+
+    .navlink{
+        font-size: 3vw;
+    }
+    .middle{
+        display: flex;
+        flex-direction: column;
+    }
+    .middlerigth{
+        width:90%;
+        height:160px;
+        
+    }
+    .middleleft{
+        color: white;
+        font-size: 3.8vw;
+        font-weight: bold;
+       /* background-color: rgb(255, 255, 255);*/
+        width: 90%;
+    }
+    .desc{
+        color: rgb(255, 255, 255);
+        background-color: rgb(111, 0, 255);
+        padding: 10px;
+        border-bottom-right-radius: 55px;
+    }
+
+    /*course list*/
+    .CoursesList{
+        width: 95%;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+    }
+    .options{
+        font-weight: 700;
+        color: black;
+        font-size: 14px;
+        height: 25px;
+        border: solid 1px rgb(165, 165, 165);
+        width: 100px;
+    }
+    .filtertitile{
+        font-size: 14px;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+    }
+    
+    .langage{
+        width: 60px;
+    }
+
+    .search{
+       
+        width: 40%;
+    }
+    .Searchinput{
+        height: 30px;
+        border: solid 1px rgb(87, 87, 87);
+        width: 90%;
+        font-weight: 600;
+        color: black;
+        font-size: 14px;
+    }
+
+    .listfilter{
+        width:60%;
+    }
+   
+
+
+
+    /*course*/
+    .Couses{
+        margin-top:10px;
+        width:90%;
+    }
+
+    /*footer*/
+    .OhtersContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .FooterOthers{
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .footerbottom{
+        height:80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .footerudefree{
+        font-size: 24px;
+    }
+
+    .copy{
+        font-size: 14px;
+    }
+    
+    /*details*/
+
+    .detailsContainer{
+        width: 85%;
+    }
+    .MoreDetails{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .DetailsLeft,.Detailsright{
+        width: 100%;
+    }
+
+    .checkoutdetails{
+        border: solid 2px rgb(130, 130, 130);
+        border-radius: 5px;
+        width: 90%;
+    }
+
+    .itempart{
+        border-right: solid 2px rgb(255, 255, 255);
+    }
+    .itemmlearn{
+        border-right: solid 2px rgb(255, 255, 255);
+
+    }
+    .partskill{
+        font-size: 13px;
+    }
+
+    .listskill{
+        font-size: 14px;
+    }
+    .waylearn{
+        font-size:20px;
+    }
+
+    .partlearn{
+        font-size:20px;
+    }
+    .terms{
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    /*payement*/
+    .payment{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .paydata{
+        font-size: 1vw;
+    }
+    /*welcome*/
+    .welcomeBody{
+       
+    }
+
+    /*userpage*/
+    .Userpage{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar{
+        height: 120px;
+    }
+    
+    .menuitem{
+        display: flex;
+        height: 100px;
+    }
+
+    
+}
