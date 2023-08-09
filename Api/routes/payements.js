@@ -1,54 +1,23 @@
 import express from "express";
 var router = express.Router();
 
-/* import Cours  from '../models/Cours.js'
+import Payement  from '../models/Payement.js'
 
-
-
-//creer un cours
-router.post("/create",async (req,res)=>{
+//Creer un paiement
+router.post("/add",async (req,res)=>{
 
     try{
-    
-        const cours = new Cours({
-            code:req.body.code,
-            intitule:req.body.intitule,
-            filiere:req.body.filiere,
-            specialite:req.body.specialite
+        const pay = new Payement({
+            coursename:req.body.coursename,
+            price:req.body.price,
+            author:req.body.author
         })
 
-        await cours.save();
-        res.status(200).json("Cours enregistre");
+        await pay.save();
+        res.status(200).json("paiement enregistre");
 
   }catch(error){
     res.status(500).json(error);
-  }
-     
-})
-
-
-//update un cours
-router.put("/update",async (req,res)=>{
-   
-    try{
-        await Cours.findById(req.body.id).updateOne({$set : req.body})
-        res.status(200).json("Cours mise-a-jour");
-
-  }catch(error){
-    res.status(500).json(error);
-  }
-     
-})
-
-//delete un cours
-router.post("/delete", async (req,res)=>{
-    
-    try{
-        await Cours.findByIdAndDelete(req.body.id)
-        res.status(200).json("Cours supprimer");
-
-    }catch(error){
-        res.status(500).json(error);
   }
      
 })
@@ -57,27 +26,12 @@ router.post("/delete", async (req,res)=>{
 router.get("/all", async (req,res)=>{
     
     try{
-        const cours = await Cours.find()
-        res.status(200).json(cours);
-
+        const paydata = await Payement.find()
+        res.status(200).json(paydata);
     }catch(error){
         res.status(500).json(error);
-  }
-     
+    }
+   
 })
-
-//un les cours
-router.get("/one", async (req,res)=>{
-    
-    try{
-        const cours = await Cours.find(req.body.intitule)
-        res.status(200).json(cours);
-
-    }catch(error){
-        res.status(500).json(error);
-  }
-     
-})
- */
 
 export default router;

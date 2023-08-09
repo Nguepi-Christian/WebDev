@@ -54,7 +54,7 @@ app.use(morgan("common"));
 
 app.use("/api/courses",courses)
 app.use("/api/users",users)
-app.use("/api/payements",payements)
+app.use("/api/payement",payements)
 
 
 app.listen(1000,()=>{

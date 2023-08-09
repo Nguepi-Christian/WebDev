@@ -44,8 +44,12 @@ router.post("/register", async (req, res) => {
         const user = await Users.findById(req.body.userId);
 
         await user.updateOne({ $push: { courses : req.body.course } });
-     
-        res.status(200).json("course added")
+
+        const updated = await Users.findById(req.body.userId);
+        
+        const {password,...data} = updated._doc
+       
+        res.status(200).json(data)
       } catch (error) {
         res.status(500).json(error)
       }

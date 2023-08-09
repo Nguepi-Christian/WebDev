@@ -1,16 +1,17 @@
 import mongoose from "mongoose";
 
-const Salles = new mongoose.Schema({
+const Payement = new mongoose.Schema({
     
-    nom:{
+    coursename:{
         type:String,
     },
     
-    capacite:{
+    price:{
         type: String,
         require: false,
     },
-    faculte:{
+
+    author:{
         type:String
     },
     
@@ -18,4 +19,4 @@ const Salles = new mongoose.Schema({
 },{ timestamps: true }
 )
 
-export default mongoose.model("Salles",Salles);
+export default mongoose.model("Payement",Payement);
