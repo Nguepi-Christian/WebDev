@@ -3,7 +3,7 @@ import './Payment.css'
 import Footer from '../../Components/Footer/Footer'
 import { Link, useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-import { api } from '../../Config'
+import { api, paypal_client_key } from '../../Config'
 import { AuthContext } from '../../Context/AuthContext'
 import { PayPalScriptProvider, PayPalButtons} from "@paypal/react-paypal-js"
 
@@ -13,7 +13,7 @@ const Top = () => {
     return(
         <div className="topdetails">
             <Link to="/" style={{textDecoration:"none"}}>
-                <h2 className='udefree'>KnowlageMarketplace</h2>
+                <h2 className='udefree' ><font color='orange'>Udefree</font></h2>
             </Link>
            
         </div>
@@ -28,12 +28,10 @@ function Payment() {
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
 
-   
     const id = useParams().id
 
     const [course , setCourse] = useState(null)
-    const [isApprove , setIsApprove ] = useState(false)
-   
+
     useEffect(() => {
       
       const SingleCourse = async () => {
@@ -42,7 +40,7 @@ function Payment() {
       }
 
       const check = () => {
-        !user && navigate('/')
+       !user && navigate('/homepage')
       }
   
       check()
@@ -51,35 +49,6 @@ function Payment() {
 
     }, [])
 
-    const payCourse = () =>{
-        
-        if(isApprove){
-            //insert course data to user course array
-
-            const data =  {
-                course : course[0] ,
-                userId : user._id
-            }
-            console.log(data)
-            try{
-                const res = api.post('/users/add',data)
-                console.log(res.data)
-            }catch(error){
-                console.log(error)
-            }
-            
-            //shwo msg "course added to your account"
-        }
-        
-    }
-    const [isOpen, setIsOpen] = useState(true);
-
-    const closeModal = () => {
-        setIsOpen(false);
-    };
-
-    
- 
     const p = course && course[0].actual_price;
  
 
@@ -98,7 +67,7 @@ function Payment() {
                             <span className='adr'>Course Informations</span>
                             <h2> {course && course[0].name}</h2>
                             <h5>Price : ${course && course[0].actual_price}</h5>
-                            <h5>Contain advaible after your have pourshase</h5>
+                            <h5>Content advaible after your have made the purshase.</h5>
                     </div>
 
                     <div className='settings'>
@@ -112,9 +81,9 @@ function Payment() {
                     
 
                     <div className='settings'>
-                        <span className='adr'>Select Your payement method</span>
-                        {/* <button className='paybutton' onClick={(e) => payCourse()}>Paypal</button> */}
-                        <PayPalScriptProvider  options={{ "client-id":"AW671_f_kbI3ow8HmLzw00GXGttKLmk5gdY0WfnV0HyPCCKGoZc9jm5rsaSgvmqG43AGiHncYjPOm61q"}}>
+                        <span className='adr'>Select Your payment method</span>
+                        
+                        <PayPalScriptProvider  options={{ "client-id": paypal_client_key}}>
                             <PayPalButtons
                                 createOrder={(data, actions) => {
                                     return actions.order.create({
@@ -135,20 +104,28 @@ function Payment() {
                                         course : course[0] ,
                                         userId : user._id
                                     }
-                                    console.log(datas)
+                                    const  paydata ={
+                                        coursename : course[0].name ,
+                                        price : course[0].actual_price ,
+                                        author : course[0].actual_price
+                                    }
                                     try{
+                                        await api.post('/payement/add',paydata)
                                         const res = await api.post('/users/add',datas)
+                                        localStorage.setItem("user", JSON.stringify(res.data))
                                         console.log(res.data)
                                     }catch(error){
                                         console.log(error)
                                     }
-                                    const alertMessage = `Trasaction was Sussessfull done You can now go to your page to download Course.
+
+                                   
+                                    /* const alertMessage = `Trasaction was Sussessfull done You can now go to your page to download Course.
                                      Details -> ${course[0].name}
                                      Price -> ${course[0].actual_price}
                                      The resource(s) is now advaible in your page .
 
-                                    Message : Thank to you ${name}`;
-                                    alert(alertMessage)
+                                    Message : Thank to you ${name}`; */
+                                   // alert(alertMessage)
                                    
                                 }
                               }
@@ -161,9 +138,8 @@ function Payment() {
                     
                 </div>
                 <div className='paydata'>
-                    Vous etes sur le point de valider votre achat sur <b>KnowlageMarketplace</b>. <br />
-                    Veuillez selectionnez un mode de payement et de remplir le formulaire qui s'affichera.
-                    les payement africain sont assures par les solutions de payement MTN et ORANGE
+                    Validate your purshase on <b><font color="orange">Udefree</font></b> by selecting a payement method (Paypal for now) and filling out the form . <br />
+                    
                 </div>
             </div>
 

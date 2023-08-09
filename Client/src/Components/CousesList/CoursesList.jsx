@@ -1,4 +1,4 @@
-
+import Spiner from '../Spinner/Spiner'
 import React, { useEffect, useState } from 'react'
 import './CoursesList.css'
 import Courses from '../Courses/Courses'
@@ -17,7 +17,6 @@ export default function CoursesList() {
     const LoadAllCourses = async () => {
           const res = await api.get('/courses/all')
           setCourses(res.data)
-          console.log(courses)
     }
 
     LoadAllCourses()
@@ -49,7 +48,6 @@ export default function CoursesList() {
     <div className='CoursesList'>
         <div className='CourseCategorie'>
            <div className="listfilter">
-
             <div className='filteroptions'>
                 <span className='filtertitile'>Category </span>
                 <select name="" id="" className='options' onChange={(e) => setOPtion(e.target.value)}>
@@ -67,27 +65,19 @@ export default function CoursesList() {
                   <option value="bug bounty">Bug Bounty</option>
                   <option value="nodejs">Nodejs</option>
                   <option value="php">Php</option>
-                 
                 </select>
-
             </div>
-
-           
 
             <div className='filteroptions'>
                 <span className='filtertitile'>Language </span>
                 <select name="" id="" className='options langage' onChange={(e) => setLangage(e.target.value)}>
-                  
                   <option value="francais">Francais</option>
                   <option value="english">Anglais</option>
-                 
                 </select>
-
             </div>
+          </div>
 
-           </div>
-
-           <div className="search">
+          <div className="search">
               <input 
                 type="search" 
                 name="" 
@@ -95,8 +85,8 @@ export default function CoursesList() {
                 placeholder='Search Courses' 
                 id="" 
                 onChange={(e) => setExpression(e.target.value)}
-                />
-           </div>
+              />
+          </div>
         </div>
 
         <div className='list'>
@@ -105,11 +95,9 @@ export default function CoursesList() {
               filter(option,expression,langage,courses).map((item)=>(
                 <Courses data={item} key={item._id}/>
               ))
-            )
+            ) 
           }
 
-        
-          
         </div>
 
     </div>

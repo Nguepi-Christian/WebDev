@@ -21,15 +21,24 @@ export default function Authentication() {
         const login = async (e) => {
             e.preventDefault();
             if(password.current.value !== "" && email.current.value !== ""){
-                loginCall({email : email.current.value,password : password.current.value},dispatch)
-                navigate('/')
+              
+                await loginCall({email : email.current.value,password : password.current.value},dispatch)
+                
+                if(user != null){
+                    navigate('/homepage')
+                  
+                }else{
+                    alert("no user found ...")
+                    
+                }
+
             }else{
                 alert('empty input(s) !')
             }
 
-             
         }
-
+        
+        
         return (
             <div className='login'>
                 
@@ -37,7 +46,7 @@ export default function Authentication() {
                     <img src="./img/3.jpg" alt="" className='loginimg'/>
                 </div>
                 <div className='right'>
-                    <p align="center"><><i>KnowlageMarketplace</i></></p><br />
+                    <h2 align="center"><b><font color='orange'>Udefree</font></b></h2><br />
     
                     <form  method="post" className='form' onSubmit={login}>
                         <input type="email" ref={email} placeholder='Your email' className='forminput'/>
@@ -87,7 +96,7 @@ export default function Authentication() {
                 }
                 try {
                     const res = await api.post('/users/register', register_data)
-                    console.log(res.statusText)
+                    
                     if(res.statusText === "OK"){
                         setIsOpen(true)
                     }
@@ -107,7 +116,7 @@ export default function Authentication() {
                     <img src="./img/4.jpg" alt=""  className='loginimg'/>
                 </div>
                 <div className='right'>
-                    <p align="center"><b><>KnowlageMarketplace</></b></p><br />
+                    <h2 align="center"><b><font color='orange'>Udefree</font></b></h2><br />
     
                     <form  method="post" className='formrgister' onSubmit={register}>
                         <input type="text" ref = {username} placeholder='Your name and surname' className='forminput'/>

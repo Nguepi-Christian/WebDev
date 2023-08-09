@@ -8,17 +8,18 @@ function Topbar() {
     <div className='topbar'>
 
       <div className="top">
-        <Link to="/" style={{textDecoration:"none"}}>
+        <Link to="/homepage" style={{textDecoration:"none"}}>
           <span className='udefree'>
-            KnowlageMarketplace
+            Udefree
           </span>
         </Link>
         <nav className='toplinks'>
-            <Link to="/about" style={{textDecoration:"none"}}>
+            {/* <Link to="/about" style={{textDecoration:"none"}}>
               <span className='navlink'>About</span>
-            </Link>
+            </Link> */}
             <Link to="/userpage" style={{textDecoration:"none"}}>
-              <span className='navlink'>My Account</span>
+              {/* <span className='navlink'>My Account</span> */}
+              <img src="./img/avatar.png" alt="" className='avatar' />
             </Link>
            
         </nav>
@@ -28,25 +29,25 @@ function Topbar() {
 
         <div className="middleleft">
 
-          <h3 className='desc'>
-            Des Cours accessibles a moindre cout sur n'importe quelle thematique.
-             <br />A vous de passez  a l'action et de progresser !
-          </h3>
+          <p className='desc'>
+            <h1><font color='orange'>Udefree</font></h1>Take action and make progress !
+            <br />You have access to the top courses and training from the most popular online learning plateforms.
+          </p>
 
           <div className="cat">
             <div className='wrapper'>
+              <div className='divitems'>Personnal Developpement</div>
+              <div className='divitems'>Videos Games Developement</div>            
+              <div className='divitems'>Web Developpement</div>
+              <div className='divitems'>AI and  Python</div>
               <div className='divitems'>Ebooks</div>
-              <div className='divitems'>Cours et Formations</div>
-              <div className='divitems'>Ai et Python</div>
-              <div className='divitems'>Jeux video et assets</div>
-              <div className='divitems'>Developpement web</div>
             </div>
           </div>
           
         </div>
 
         <div className="middlerigth">
-             <img src="./img/1.jpg" alt="" className='images'/>
+             <img src="./img/moon.png" alt="" className='images'/>
         </div>
 
         

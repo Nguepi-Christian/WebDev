@@ -1,0 +1,40 @@
+.Download{
+    width: 70%;
+    min-height: 90vh;
+    border-left: solid 2px rgb(180, 180, 180);
+    border-right: solid 2px rgb(180, 180, 180);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+.topdownloaddetails{
+    top: 0;
+    position: sticky;
+    height: 70px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+}
+
+.cousedownloadbox{
+    width: 90%;
+    height: 35px;
+    border-radius: 0px;
+    border-bottom: solid 1px rgb(186, 186, 186);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+
+
+@media all and (max-width: 650px){
+    .Download{
+        width: 100%;
+        border-left: solid 0px rgb(129, 129, 129);
+        border-right: solid 0px rgb(129, 129, 129);
+    }
+}

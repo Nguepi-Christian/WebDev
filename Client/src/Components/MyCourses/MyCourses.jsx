@@ -1,81 +1,58 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../Context/AuthContext'
+import { Link } from "react-router-dom"
 import './MyCourses.css'
 
 
 export default function MyCourses() {
-  const [word,setWord] = useState("")
-  const { user } = useContext(AuthContext)
-  
+  //const { user } = useContext(AuthContext)
+  const user = JSON.parse(localStorage.getItem("user"))
   
   // <span className='action update'><a href={link+'.png'}>save</a></span>
-  const Ligne = ({index,name , author , category , part, link}) =>{
-
+  const UserCourseItem = ({index,id,name , author , category , price}) =>{
     return(
-      <tr className ="tr">
-        <td className ="tr">{index}</td>
-        <td className ="tr">{name}</td>
-        <td className ="tr">{author}</td>
-        <td className ="tr">{category}</td>
-        <td className ="tr">{part}</td>
-        <td className='Actions'>
-          
-          <button className='action update'><a href={link+ '.png'}>Save</a></button>
-        </td>                                                                         
-      </tr>
+      <div className="usercourseitem" key={index}>
+        <div className='courseitemtitle'>
+          <span><b>Courses</b> : <font color="blue">{name}</font></span>
+          <span><b>Author</b> : <font color="blue">{author}</font></span>
+          <span><b>Price</b> : <font color="blue">$ {price}</font></span>
+          <span><b>Categorie</b> : <font color="blue">{category}</font></span>
+          <span>
+            <Link to={"/download/"+id}
+              style={{
+                textDecoration:"none",
+                cursor:"pointer",
+                marginLeft:"70%",
+                backgroundColor:"",
+                color:"blue"
+                }}
+              >
+                <b>Download</b>
+            </Link>
+          </span>
+        </div>
+      </div>
     )
   }
- 
- /*  const key = ["name" , "capacite" , "faculte"]
-  const data =[]
-  const Search = (data) =>  {
-       return (
-              data.filter((items) => 
-                key.some((key) => items[key].toLowerCase().includes("word"))
-              )
-       )
-     }
 
-     
-  console.log(user && user.courses) */
   
-  var i = 0
+  var i = 0 ;
   
   return (
-    <div className='MyCourses'>
-         {/* <div className='Search'>
-              <input type="search" name="" placeholder='Find your subject' id="" className='inputSearch' onChange={(e)=>setWord(e.target.value)}/>
-              <button className="SearchButton">Search</button>
-          </div> */}
-
-          <table className="Table">
-            <thead>
-              <tr className ="tr">
-                <th className ="th"></th>
-                <th className ="th">Formations</th>
-                <th className ="th">Auteur</th>
-                <th className ="th">Categorie</th>
-                <th className ="th">Part</th>
-                <th className ="th">Telecharger</th>
-              </tr> 
-            </thead>
-                                                                                      
-            <tbody>
+    <>
+      <div className="ordertop">
+        <h2 className='ordertoptitle'>Courses and Formations</h2>
+      </div>
+      <div className='MyCourses'>
               { 
-                user && user.courses.map(element => (
-                  
-                    element.part.map(item => (
-                      
-                      <Ligne key={i++} index = {i} name = {element.name} author = {element.creator} category = {element.category} part = {item.name} link = {item.link} /> 
-                    )
+                user && 
+                  user.courses.map(element => (
+                        <UserCourseItem key={i++} id={element._id} name = {element.name} author = {element.creator} category = {element.category} price={element.actual_price}/> 
                   )
                 )
-              )
-              }
-            </tbody>
-                 
-            
-          </table>
-    </div>
+              } 
+          
+      </div>
+  </>
   )
 }

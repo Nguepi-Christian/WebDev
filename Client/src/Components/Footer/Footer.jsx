@@ -1,8 +1,9 @@
 import React from 'react'
 import './Footer.css'
-
+import {useNavigate} from 'react-router-dom'
 
 function Footer() {
+  const navigate = useNavigate()
   return (
     <footer className="Footercontainer">
 
@@ -18,16 +19,18 @@ function Footer() {
         <div className="FooterOthers">
               <p className="offer">Location</p>
               <span>Country : Pologne</span>
-              <span>City : </span>
+              {/* <span>City : </span>
               <span>Adress : </span>
-              <span>PBOX : </span>
+              <span>PBOX : </span> */}
               
         </div>
         <div className="FooterOthers">
               <p className="offer">About us</p>
-              <span>email :</span>
+              {/* <span>email :</span>
               <span>Youtube :</span>
-              <span>Telegram group :</span>
+              <span>Telegram group :</span> */}
+             <span className='Startnow' onClick={(e)=>{navigate('/')}}>Go Now !</span>
+
         </div>
         <div className="FooterOthers">
               <p className="offer">Our Services</p>
@@ -36,10 +39,10 @@ function Footer() {
               <span>Ebooks</span>
         </div>
         <div className="FooterOthers">
-              <p className="offer">More</p>
-              <span>Security</span>
-              <span>Report problem</span>
-              <span>Terms & Conditions</span>
+              <p className="offer">Social</p>
+              <span>Facebook</span>
+              <span>Youtube</span>
+              <span>Telegram</span>
         </div>
       </div>
 

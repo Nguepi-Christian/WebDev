@@ -1,18 +1,16 @@
 .topdetails{
     height: 70px;
     width: 100%;
-    background-color: rgb(111, 0, 255);
+    background-color: rgb(0, 0, 0);
     z-index: 100;
     display: flex;
     align-items: center;
-    position: sticky;
-    top: 0;
 }
 
 .MainDetails{
     height: 55vh;
     width: 100%;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(18, 18, 18);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -25,16 +23,16 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 50vh;
-    width: 65%;
+    width: 70%;
     margin: auto;
-   
+  
 }
 
 
 
 .MoreDetails{
     background-color: aqua;
-    width: 90%;
+    width: 95%;
     min-height: 100vh;
     margin: auto;
     margin-top: 30px;
@@ -57,16 +55,20 @@
     color:white
 }
 .itempath{
-    color:rgb(0, 255, 115)
+    color:rgb(255, 174, 0)
 }
 
 .itemdesc{
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 500;
+}
+.itemdesc>h2{
+    margin-bottom: 5px;
+    color: orange;
 }
 .itemperson{
-    color:rgb(0, 98, 255) ;
+    color:rgb(255, 174, 0) ;
     font-weight: 600;
 }
 
@@ -97,12 +99,14 @@
     padding: 10px;
     display: flex;
     margin: auto;
-    width: 80%;
+    width: 85%;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
-    border: solid 1px rgb(255, 255, 255);
+    border: solid 1px rgb(157, 157, 157);
     border-radius: 5px;
-
+    flex-direction: column;
+    height: 350px;
+    justify-content: space-between;
 }
 
 
@@ -123,7 +127,14 @@
     text-align: justify;
 }
 
+.detailsimg{
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+
 .waylearn{
+    margin-top: 20px;
     font-weight: 600;
     font-size:22px;
     color: rgb(255, 136, 0);
@@ -142,7 +153,6 @@
     border-radius: 0px;
     display: flex;
     flex-direction: column;
-    
     align-items: center;
 }
 .partlearn{
@@ -150,8 +160,6 @@
     font-size: 20px;
     color: rgb(255, 136, 0);
     text-align: center;
-
-   
 }
 
 .listskill{
@@ -163,17 +171,17 @@
 .partskill{
     margin-top: 5px;
     margin-bottom: 10px;
-    border: dotted 1px rgba(97, 97, 97, 0.742);
-    border-radius: 0px;
+    border: solid 2px rgb(154, 154, 154);
+    border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.271);
-    width: 90%;
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left:10px;
     padding-right: 10px;
     height: 35px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
-    color: rgb(71, 71, 71);
+    color: rgb(36, 36, 36);
 }

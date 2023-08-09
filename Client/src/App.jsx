@@ -4,21 +4,22 @@ import Homepage from "./Pages/Homepage/Homepage";
 import Payment from "./Pages/Payement/Payment";
 import Userpage from "./Pages/Userpage/Userpage";
 import Welcome from "./Pages/Welcome/Welcome";
-import { AuthContext } from "./Context/AuthContext";
+//import { AuthContext } from "./Context/AuthContext";
 import {
   Routes , Route
 } from 'react-router-dom'
-import { useContext } from "react";
+import Download from "./Pages/Download/Download";
+//import { useContext } from "react";
 
 const App = () => {
-  const {user}  = useContext (AuthContext)
-
+ 
   return (
+
   <> 
     <Routes>
-        <Route path="/" element={<Homepage/>}></Route>
+        <Route path="/" element={<Welcome/>}></Route>
 
-        <Route path="/about" element={<Welcome/>}></Route>
+        <Route path="/homepage" element={<Homepage/>}></Route>
 
         <Route path="/userpage" element={<Userpage/>}></Route>
 
@@ -27,6 +28,8 @@ const App = () => {
         <Route path="/details/:id" element={ <Details/>}></Route>
 
         <Route path="/authentication" element={ <Authentication/>}></Route>
+
+        <Route path="/download/:id" element={ <Download/>}></Route>
     </Routes>
       
   </>

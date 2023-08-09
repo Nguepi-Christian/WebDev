@@ -8,7 +8,7 @@
 .sidebar{
     flex: 0.8;
     background-color: rgb(59, 59, 59);
-    height: 89.3vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -40,7 +40,7 @@
 
 .Rightdiv{
     flex: 4;
-    height: 88vh;
+    height: 100vh;
     overflow-y: scroll;
 }
 
@@ -55,5 +55,9 @@
         height:30px;
         width: 30%;
         font-size: 3.5vw;
+    }
+    .sidebar{
+        position: sticky;
+        top: 0;
     }
 }

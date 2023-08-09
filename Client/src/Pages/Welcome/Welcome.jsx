@@ -1,34 +1,37 @@
 import React from 'react'
 import Footer from '../../Components/Footer/Footer'
+import { useNavigate } from "react-router-dom"
 import './Welcome.css'
-
-
 
 function Welcome() {
 
-
+  const navigate = useNavigate()
+ 
   return (
     <div className='Welcome'>
         
         <div className="welcomeTop">
-            <div className='welcometopbar'>
-                {/* <span className='welcomelogin'>Login</span>
-                <span className='welcomelogin reg'>Register</span> */}
-            </div>
-            <p className='welcomeude'>KnowlageMarketplace</p>
+           {/*  <div className='welcometopbar'>
+                <span className='welcomelogin'>Login</span>
+                <span className='welcomelogin reg'>Register</span>
+            </div> */}
+            <p className='welcomeude'><font color="orange">Udefree</font></p>
+            <img src="./img/astronaut.png" alt="" />
+            
             <p className='msg'>
-               Your journey to unlimited learning starts here. Here's what awaits you on our site 
+               Your journey to unlimited learning starts here !
             </p>
-            <span className='Startnow'>Start Now !</span>
+            <span className='Startnow' onClick={(e)=>{navigate('/homepage')}}>Start Now !</span>
         </div>
 
         <div className="welcomeBody">
            <div className="divone">
                 <p className='onetitle'>
-                    Welcome to Udefree
+                    Welcome to <b><font color="orange">Udefree !</font></b>
                 </p>
+                
                 <p className='onedesc' >
-                        Welcome to our platform Udefree, 
+                        Welcome to Udefree, 
                         an alternative to access courses
                         from the best online learning
                         platforms such as Udemy,
@@ -51,16 +54,13 @@ function Welcome() {
                 </p>
                 <p className='onedesc' >
                         <ul>
-                            <li>
-                                Unmatched excellence: We never compromise on the quality of our courses and programs. We provide you with the best content from these renowned platforms so you can benefit from it according to your needs.
-                            </li>
-
+                
                             <li>
                                 Total freedom: Forget about time and location constraints. Our download feature allows you to access your courses anytime and anywhere. No need to worry about an internet connection. Learn at your own pace, according to your needs and preferences.
                             </li>
 
                             <li>
-                                We designed our platform to help you save money. Reduce data and bandwidth costs without sacrificing the quality of learning. It's a real bargain!
+                                We designed our platform to help you save money, Reduce data and bandwidth costs without sacrificing the quality of learning. It's a real bargain!
                             </li>
 
                             <li>
@@ -84,6 +84,9 @@ function Welcome() {
                 <p className='onedesc' >
                         <ul>
                             <li>
+                                Best price : we provide all our course for  $1 - 20$ so that you can enjoy , this if for your !
+                            </li>
+                            <li>
                                 Learning freedom: No more conforming to fixed schedules or spending a fortune on individual courses. Learn on your terms, at your own pace, and from the comfort of your home
                             </li>
 
@@ -91,9 +94,7 @@ function Welcome() {
                                 Personal fulfillment: Our platform goes beyond acquiring skills. It serves as a catalyst for your personal growth. Discover new passions through our diverse range of courses, expand your skills, and open yourself to a world of possibilities.
                             </li>
 
-                            <li>
-                                Dynamic community: Join a community of motivated learners and engage with them to enhance your learning experience. Benefit from the advice and different perspectives of fellow members to progress faster
-                            </li>
+                           
                         </ul>
                 </p>
                 
@@ -107,12 +108,9 @@ function Welcome() {
                     How we Do that ?   
                 </p>
                 <p className='onedesc' >
-                     All Ressorces we provide you where buy on the best online plateform courses
-                     and we decide to help people who dont have enought money so that that they can
-                     has acces to the best knowledge . This does not have any copyright due that we buy.
-                     enjouy this ofert. <br />
-
-                     See the video bellow to see how to get file
+                     All Courses we provide here , where buy on the best online plateform courses , courses very good
+                       
+                    <br />
                 </p>
                 
                 <div className='oneimgcontainer'>
@@ -125,17 +123,20 @@ function Welcome() {
                     Let Started !
                 </p>
                 <p className='onedesc' >
-                    You're just a click away from transforming your future. Don't wait any longer to sign up. Join our community and access a treasure trove of knowledge, opportunities, and success.
-                    Your success starts here. Register now and let our extraordinary site guide you to unexpected heights.
+                    You're just a click away from transforming your future. Don't wait any longer to sign up. Join our community and access a treasure trove of knowledge.
+                    Register now and let our extraordinary site guide you to unexpected heights.
                 </p>
                 
                 <div className='oneimgcontainer'>
                     <img src="./img/Demo.png" alt="" className='oneimg lets'/>
                 </div>
 
-                <div>
-                    <span className='Startnow'> Start Now !</span>
-                </div>
+               
+                <div className='welcometopbar'>
+                    <span className='welcomelogin' onClick={(e)=>{navigate('/authentication')}}>Login</span>
+                    <span className='welcomelogin reg' onClick={(e)=>{navigate('/authentication')}}>Register</span>
+                </div> 
+                
            </div>
         </div>
 

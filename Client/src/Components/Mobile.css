@@ -1,19 +1,30 @@
 @media all and (max-width: 650px){
     /*Topbar*/
     .udefree{
-        font-size:4vw;
+        font-size:5.5vw;
+        
+    }
+    .avatar{
+        height: 35px;
+        width: 35px;
+        object-fit: cover;
+        border-radius: 50%;
+       
     }
 
     .top{
         
     }
     .topbar{
-        background-color: black;
-        height: 70vh;
+        height: 90vh;
+        background-color: rgb(37, 37, 37);
+        display: flex;
+        justify-content: space-between;
     }
 
     .navlink{
         font-size: 3vw;
+        font-weight: normal;
     }
     .middle{
         display: flex;
@@ -21,7 +32,7 @@
     }
     .middlerigth{
         width:90%;
-        height:160px;
+       height: 300px;
         
     }
     .middleleft{
@@ -33,9 +44,14 @@
     }
     .desc{
         color: rgb(255, 255, 255);
-        background-color: rgb(111, 0, 255);
+        background-color: rgb(37, 37, 37);
         padding: 10px;
+        font-weight: 600;
         border-bottom-right-radius: 55px;
+    }
+    .divitems{
+        color: rgb(255, 136, 0);
+        font-size: 20px;
     }
 
     /*course list*/
@@ -60,35 +76,41 @@
         font-weight: 600;
         color: rgb(0, 0, 0);
     }
+    .CourseCategorie{
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .listfilter{
+        width: 100%;
+    }
     
     .langage{
-        width: 60px;
+        width: 100px;
     }
 
     .search{
-       
-        width: 40%;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 10px;
     }
     .Searchinput{
-        height: 30px;
-        border: solid 1px rgb(87, 87, 87);
-        width: 90%;
+        height: 35px;
+        border: solid 1px rgb(29, 29, 29);
+        width: 100%;
         font-weight: 600;
         color: black;
         font-size: 14px;
+        border-radius: 5px;
     }
-
-    .listfilter{
-        width:60%;
+    .filteroptions{
+        width: 50%;
     }
-   
-
-
 
     /*course*/
     .Couses{
         margin-top:10px;
-        width:90%;
+        width:95%;
     }
 
     /*footer*/
@@ -98,8 +120,9 @@
     }
 
     .FooterOthers{
-        width: 100%;
-        margin-left: 10px;
+        width:85%;
+        margin: auto;
+        padding: 10px;
     }
 
     .footerbottom{
@@ -119,9 +142,11 @@
     }
     
     /*details*/
-
+    .topdetails{
+        height: 80px;
+    }
     .detailsContainer{
-        width: 85%;
+        width: 90%;
     }
     .MoreDetails{
         display: flex;

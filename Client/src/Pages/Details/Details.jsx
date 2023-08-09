@@ -9,8 +9,8 @@ import { useParams } from 'react-router-dom'
 const Top = () => {
     return(
         <div className="topdetails">
-            <Link to="/" style={{textDecoration:"none"}}>
-                 <h2 className='udefree'>KnowlageMarketplace</h2>
+            <Link to="/homepage" style={{textDecoration:"none"}}>
+                 <h2 className='udefree'>Udefree</h2>
             </Link>
            
         </div>
@@ -31,7 +31,8 @@ function Details() {
 
       SingleCourse()
 
-    }, [])
+    }, [id])
+    
 
   return (
     <>
@@ -41,15 +42,13 @@ function Details() {
         <div className='MainDetails'>
 
             <div className='detailsContainer'>
-                <h5 className='itempath'>Categorie : {course && course[0].category}</h5>
+                <h4 className='itempath'>Category : {course && course[0].category}</h4>
                 <h1 className='itemTitle'>
                    {course && course[0].name}
                 </h1>
-                <p className='itemdesc'>
-                     {course &&  course[0].description}
-                </p>
+               
 
-                <span className='itemperson'>Downloads : {course && course[0].students} </span>
+                <span className='itemperson'>Note : {course && course[0].students} /5</span>
                 {/* <span className='itemdate'>Derniere Mise a jours :23/04/2023 a 13h26 min</span> */}
                 <span className='itemauthor'>Author : {course && course[0].creator}</span>
             </div>
@@ -64,6 +63,10 @@ function Details() {
 
             <div className='DetailsLeft'>
                 <div className='itemmlearn'>
+                    <p className='itemdesc'>
+                        <h2>Description</h2>
+                        {course &&  course[0].description}
+                    </p>
                     <p className='waylearn'>After this Course Students can:</p>
                 
                     <div className='learnlist'>
@@ -78,6 +81,7 @@ function Details() {
                     </div>
                 </div>
                 <div className='itempart'>
+               
                     <p className='partlearn'>Part of this cours</p>
                 
                    
@@ -97,20 +101,24 @@ function Details() {
 
             <div className='Detailsright'>
                 <div className='checkoutdetails'>
-                    <h3 className='checkoutitle'>
-                        {course && course[0].name}
-                    </h3>
-                    <span className='price'>Price  : ${course && course[0].actual_price}</span>
-                    <button className='FooterButton tocard'>
-                        <Link to={"/payement/"+id} style={{textDecoration:"none"}}>
-                            Buy and Download
-                        </Link>
-                    </button>
-                    <p className='terms'>
-                        Une fois acheter , vous avez acces en mode telechargement
-                        tant que votre compte est sur notre systeme , vous pouvez aceder a tout moment.
-                    </p>
+                    <div className='Courseimg'>
+                        <img alt="" src="../../img/3.jpg"  className='coverimg'/>
+                    </div>
 
+                    <div className='Coursedescription'>
+                        <span className='Title'>{course && course[0].name}</span>
+                        <span className='CourseAuthor'><b>Author</b> : {course && course[0].creator}</span>
+                        
+                        <span className='price'>${course && course[0].actual_price}</span>
+                    </div>
+
+                    <div className='CoursesFooter'>
+                        <span className='FooterButton tocard'>
+                            <Link to={"/payement/"+id} style={{textDecoration:"none",color:"white"}}>
+                                Buy and Download
+                            </Link>
+                        </span>
+                    </div>
                     
                 </div>
             </div>

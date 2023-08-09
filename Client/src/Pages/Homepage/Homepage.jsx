@@ -30,7 +30,7 @@ function Homepage() {
   return (
     <div className='Homepage'>
         <Topbar/>
-        <button onClick={(e) => ClearLocalStorage()}>Clear</button>
+        {/* <button onClick={(e) => ClearLocalStorage()}>Clear</button> */}
         <CoursesList/>
         <Footer/>
 
@@ -41,7 +41,7 @@ function Homepage() {
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            <h4>Notification</h4>
+            
             <div className="body">
                 <p>You don't have an account or your are not login , your can't acces to your userpage ! please <b>Login</b> or <b>Register</b> to have access to others functionnality !</p>
                 <div className="modalfooter" >

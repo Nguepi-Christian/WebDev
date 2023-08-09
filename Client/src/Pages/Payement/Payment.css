@@ -22,12 +22,11 @@
     flex-direction: column;
     background-color: rgb(255, 255, 255);
     justify-content: space-around;
-    height: 150px;
-    padding: 10px;
-    border: solid 1px rgb(255, 255, 255);
+    height: 120px;
+    padding: 5px;
+    border: solid 2px rgb(146, 146, 146);
     border-radius: 5px;
     margin-top: 20px;
-    
 }
 
 .paydata{

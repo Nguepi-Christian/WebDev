@@ -1,7 +1,4 @@
-import { useNavigate } from 'react-router-dom';
 import { api } from './Config.js'
-
-const navigate = useNavigate
 
 export const loginCall = async (userCredential , dispatch) => {
    dispatch({ type: "LOGIN_START" });

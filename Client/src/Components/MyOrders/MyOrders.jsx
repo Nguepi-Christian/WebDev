@@ -1,62 +1,52 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { api } from '../../Config'
 import './MyOrders.css'
 
 
 export default function MyOrders() {
 
+  const [orders,setOrders] = useState("")
 
-
-  const [word,setWord] = useState("")
-
-
-  const Ligne = ({data}) =>{
+  const OrderItem = ({data}) =>{
 
     return(
-      <tr className ="tr">
-        <td className ="tr">Developemment web</td>
-        <td className ="tr">Dr Aura</td>
-        <td className ="tr">Web et Applications</td>
-        <td className ="tr">$18</td>
-        <td className='tr'>10 jiun 2023</td>                                                                         
-      </tr>
+      <div className="order">
+        <span className =""><b>Formation</b> : {data.name}</span>
+        <span className =""><b>Auteur</b> :{data.author}</span>
+        <span className =""><b>Prix</b> : ${data.price}</span>
+        <span className=''><b>Date</b> :</span> 
+      </div>
     )
   }
  
-  const key = ["nom" , "capacite" , "faculte"]
-  const data =[]
-  const Search = (data) =>  {
-       return (
-              data.filter((items) => 
-                key.some((key) => items[key].toLowerCase().includes("word"))
-              )
-       )
-     }
   
+  useEffect(() => {
+      
+    const oders= async () => {
+         const res = await api.get('/payement/all')
+         setOrders(res.data)
+    }
 
+
+    oders()
+
+  }, [])
 
 
 
   return (
-    <div className='Orders'>
-
-          <table className="Table">
-              <tr className ="tr">
-              <th className ="th">Formations</th>
-              <th className ="th">Auteur</th>
-              <th className ="th">Categorie</th>
-              <th className ="th">Prix</th>
-              <th className ="th">Date d'achat</th>                                                           
-            </tr>
-                 
-            <Ligne/>
-            <Ligne/>
-            <Ligne/>
-            <Ligne/>
-            <Ligne/>
-            <Ligne/>
-            <Ligne/>
-            <Ligne/>
-          </table>
-    </div>
+    <>
+      <div className="ordertop">
+        <h2 className='ordertoptitle'>Purshases</h2>
+      </div>
+      <div className='Orders'>
+        {
+          orders && orders.map((item)=>(
+            <OrderItem data={item}/>
+          ))
+        }
+        
+      </div>
+    </>
   )
 }
