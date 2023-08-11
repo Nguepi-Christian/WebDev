@@ -1,5 +1,5 @@
 .CoursesList{
-    width: 85%;
+    width: 100%;
     margin: auto;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -18,12 +18,14 @@
 }
 
 .list{
-    width: 100%;
+    margin: auto;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    gap: 10px;
+    justify-content: center;
     background-color: rgb(255, 255, 255);
-    min-height: 80vh;
+    min-height: 90vh;
 }
 
 .listfilter{
@@ -44,7 +46,7 @@
 }
 
 .Searchinput{
-    height: 35px;
+    height: 30px;
     border: solid 2px rgb(104, 104, 104);
     width: 100%;
     font-weight: 600;
@@ -67,7 +69,7 @@
     font-weight: 700;
     color: black;
     font-size: 14px;
-    height: 35px;
+    height: 30px;
     border: solid 2px rgb(84, 84, 84);
     width: 200px;
     border-radius: 5px;

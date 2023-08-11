@@ -20,9 +20,9 @@ function Download() {
     return (
     
         <div className='cousedownloadbox' key={index}>
-          <span><b>{name}</b></span>
-          <span><b>size</b> : --</span>
-          <span><font color='blue'><b><a href={link}>Save</a></b></font></span>
+          <span><i> {name}</i></span>
+          <span><i> Size</i> : --</span>
+          <span><font color='blue'><i><a href={link}>Save</a></i></font></span>
         </div>
       
     )
@@ -64,11 +64,11 @@ function Download() {
     <>
       <Top/>
       <div className='Download'>
-          <p style={{marginBottom:"20px",textAlign:"center"}}>
-            <font size="6" color='orange'>
+          <h2 style={{marginBottom:"20px",textAlign:"center"}}>
+            <font color='orange'>
               {course && course.name}
             </font>
-          </p>
+          </h2>
             { 
               course && course.part.map(item => (
                   <CourseDownload key={i++} name = {item.name} link = {item.link}/> 

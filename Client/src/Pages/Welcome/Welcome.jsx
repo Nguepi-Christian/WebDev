@@ -31,7 +31,7 @@ function Welcome() {
                 </p>
                 
                 <p className='onedesc' >
-                        Welcome to Udefree, 
+                        Welcome to <b><font color="orange">Udefree</font></b>, 
                         an alternative to access courses
                         from the best online learning
                         platforms such as Udemy,
@@ -40,11 +40,10 @@ function Welcome() {
                         than just an alternative online
                         course site. By joining our community,
                         you make a smart choice for your personal
-                        and professional growth
+                        and professional growth.
                 </p>
                 <div className='oneimgcontainer'>
-                    
-                    <img src="./img/1.jpg" alt="" className='oneimg'/>
+                    <img src="./img/team.png" alt="" className='oneimg' loading='lazy'/>
                 </div>
            </div>
 
@@ -53,27 +52,21 @@ function Welcome() {
                     Why choose our site ?
                 </p>
                 <p className='onedesc' >
-                        <ul>
-                
-                            <li>
-                                Total freedom: Forget about time and location constraints. Our download feature allows you to access your courses anytime and anywhere. No need to worry about an internet connection. Learn at your own pace, according to your needs and preferences.
-                            </li>
 
-                            <li>
+                            <span>
+                                <b>Total freedom</b> <br /> Forget about time and location constraints. Our download feature allows you to access your courses anytime and anywhere. No need to worry about an internet connection. Learn at your own pace, according to your needs and preferences.
                                 We designed our platform to help you save money, Reduce data and bandwidth costs without sacrificing the quality of learning. It's a real bargain!
-                            </li>
-
-                            <li>
                                 By choosing our platform, you avoid paying the high fees of these individual platforms. Enjoy access to a variety of high-quality courses, all at an affordable price.
-                            </li>
-                            <li>
-                                Guaranteed growth: By choosing our site, you opt for constant evolution. We're here to help you develop your skills, expand your horizons, and achieve your goals. You deserve to shine and reach your full potential.
-                            </li>
-                        </ul>
+                            </span>
+                            <br />
+                            <span>
+                                <b>Guaranteed growth</b><br /> By choosing our site, you opt for constant evolution. We're here to help you develop your skills, expand your horizons, and achieve your goals. You deserve to shine and reach your full potential.
+                            </span>
+                    
                 </p>
 
                 <div className='oneimgcontainer'>
-                    <img src="./img/App.png" alt="" className='oneimg'/>
+                    <img src="./img/App.png" alt="" className='oneimg' loading='lazy'/>
                 </div>
            </div>
 
@@ -81,25 +74,25 @@ function Welcome() {
                 <p className='onetitle'>
                     Discover our solution   
                 </p>
-                <p className='onedesc' >
-                        <ul>
+              
+                        <ul className='onedesc'>
                             <li>
-                                Best price : we provide all our course for  $1 - 20$ so that you can enjoy , this if for your !
+                                <b>Best price</b> : we provide all our course for  $1 - 20$ so that you can enjoy , this if for your !
                             </li>
                             <li>
-                                Learning freedom: No more conforming to fixed schedules or spending a fortune on individual courses. Learn on your terms, at your own pace, and from the comfort of your home
+                                <b>Learning freedom</b>: No more conforming to fixed schedules or spending a fortune on individual courses. Learn on your terms, at your own pace, and from the comfort of your home
                             </li>
 
                             <li>
-                                Personal fulfillment: Our platform goes beyond acquiring skills. It serves as a catalyst for your personal growth. Discover new passions through our diverse range of courses, expand your skills, and open yourself to a world of possibilities.
+                                <b>Personal fulfillment</b> : Our platform goes beyond acquiring skills. It serves as a catalyst for your personal growth. Discover new passions through our diverse range of courses, expand your skills, and open yourself to a world of possibilities.
                             </li>
 
                            
                         </ul>
-                </p>
+              
                 
                 <div className='oneimgcontainer'>
-                    <img src="./img/Connected.png" alt="" className='oneimg'/>
+                    <img src="./img/Connected.png" alt="" className='oneimg' loading='lazy'/>
                 </div>
            </div>
 
@@ -108,13 +101,14 @@ function Welcome() {
                     How we Do that ?   
                 </p>
                 <p className='onedesc' >
-                     All Courses we provide here , where buy on the best online plateform courses , courses very good
-                       
-                    <br />
+                     All Courses we provide here where buy on the best online plateform courses.
                 </p>
                 
-                <div className='oneimgcontainer'>
-                    <img src="./img/1.jpg" alt="" className='oneimg'/>
+                <div className='scroll'>
+                        <img src="./img/Cover.png" alt="" className='oneimg' loading='lazy'/>
+                        <img src="./img/1.jpg" alt="" className='oneimg' loading='lazy' onLoad={(e)=>console.log('load')}/>
+                        <img src="./img/4.jpg" alt="" className='oneimg' loading='lazy'/>
+                        <img src="./img/3.jpg" alt="" className='oneimg' loading='lazy'/>  
                 </div>
            </div>
            

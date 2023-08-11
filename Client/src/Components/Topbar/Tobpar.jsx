@@ -29,8 +29,9 @@ function Topbar() {
 
         <div className="middleleft">
 
-          <p className='desc'>
-            <h1><font color='orange'>Udefree</font></h1>Take action and make progress !
+          
+            <h1><font color='orange'>Udefree</font></h1>
+            <p className='desc'>Take action and make progress !
             <br />You have access to the top courses and training from the most popular online learning plateforms.
           </p>
 

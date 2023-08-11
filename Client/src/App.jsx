@@ -4,17 +4,22 @@ import Homepage from "./Pages/Homepage/Homepage";
 import Payment from "./Pages/Payement/Payment";
 import Userpage from "./Pages/Userpage/Userpage";
 import Welcome from "./Pages/Welcome/Welcome";
-//import { AuthContext } from "./Context/AuthContext";
+import { AuthContext } from "./Context/AuthContext";
 import {
-  Routes , Route
+  Routes , Route ,redirect,useNavigate
 } from 'react-router-dom'
 import Download from "./Pages/Download/Download";
-//import { useContext } from "react";
+import { useContext, useEffect  } from "react";
 
-const App = () => {
+   
  
+const App = () =>{
+  
+  /* const { user } = useContext(AuthContext)
+  const navigate = useNavigate() */
+  
   return (
-
+   
   <> 
     <Routes>
         <Route path="/" element={<Welcome/>}></Route>
@@ -27,7 +32,7 @@ const App = () => {
 
         <Route path="/details/:id" element={ <Details/>}></Route>
 
-        <Route path="/authentication" element={ <Authentication/>}></Route>
+        <Route path="/authentication" element={<Authentication/>}></Route>
 
         <Route path="/download/:id" element={ <Download/>}></Route>
     </Routes>

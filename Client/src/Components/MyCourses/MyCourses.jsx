@@ -47,11 +47,17 @@ export default function MyCourses() {
               { 
                 user && 
                   user.courses.map(element => (
-                        <UserCourseItem key={i++} id={element._id} name = {element.name} author = {element.creator} category = {element.category} price={element.actual_price}/> 
+                        <UserCourseItem 
+                          key={i++} 
+                          id={element._id} 
+                          name = {element.name} 
+                          author = {element.creator} 
+                          category = {element.category} 
+                          price={element.actual_price}
+                        /> 
                   )
                 )
-              } 
-          
+              }  
       </div>
   </>
   )

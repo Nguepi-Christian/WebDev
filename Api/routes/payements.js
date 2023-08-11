@@ -10,7 +10,8 @@ router.post("/add",async (req,res)=>{
         const pay = new Payement({
             coursename:req.body.coursename,
             price:req.body.price,
-            author:req.body.author
+            author:req.body.author,
+            userid:req.body.userid
         })
 
         await pay.save();
@@ -23,15 +24,17 @@ router.post("/add",async (req,res)=>{
 })
 
 //tous les cours
-router.get("/all", async (req,res)=>{
+router.get("/one/:id", async (req,res)=>{
     
     try{
-        const paydata = await Payement.find()
+        const paydata = await Payement.find({userid : req.params.id})
         res.status(200).json(paydata);
     }catch(error){
         res.status(500).json(error);
     }
    
 })
+
+//Get by user
 
 export default router;

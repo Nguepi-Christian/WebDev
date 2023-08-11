@@ -97,6 +97,20 @@ export default function CoursesList() {
               ))
             ) 
           }
+          {
+            (
+              filter(option,expression,langage,courses).map((item)=>(
+                <Courses data={item} key={item._id}/>
+              ))
+            ) 
+          }
+          {
+            (
+              filter(option,expression,langage,courses).map((item)=>(
+                <Courses data={item} key={item._id}/>
+              ))
+            ) 
+          }
 
         </div>
 

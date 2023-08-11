@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import { api, paypal_client_key } from '../../Config'
 import { AuthContext } from '../../Context/AuthContext'
 import { PayPalScriptProvider, PayPalButtons} from "@paypal/react-paypal-js"
+import { positions, useAlert  } from 'react-alert'
 
 
 
@@ -27,7 +28,8 @@ function Payment() {
 
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
-
+    const alert = useAlert()
+    
     const id = useParams().id
 
     const [course , setCourse] = useState(null)
@@ -107,18 +109,22 @@ function Payment() {
                                     const  paydata ={
                                         coursename : course[0].name ,
                                         price : course[0].actual_price ,
-                                        author : course[0].actual_price
+                                        author : course[0].creator , 
+                                        userid : user._id
                                     }
                                     try{
                                         await api.post('/payement/add',paydata)
                                         const res = await api.post('/users/add',datas)
+                                        localStorage.setItem("user", JSON.stringify(""))
                                         localStorage.setItem("user", JSON.stringify(res.data))
-                                        console.log(res.data)
+                                        
                                     }catch(error){
                                         console.log(error)
                                     }
 
-                                   
+                                    alert.success("Done! go to your accout",{
+                                        timeout : 20000
+                                    })
                                     /* const alertMessage = `Trasaction was Sussessfull done You can now go to your page to download Course.
                                      Details -> ${course[0].name}
                                      Price -> ${course[0].actual_price}
@@ -129,6 +135,15 @@ function Payment() {
                                    
                                 }
                               }
+                              onError={async (data, actions) => {
+                                    alert.error("Error , Try again !")
+                                }
+                              }
+
+                              onCancel={async (data, actions) => {
+                                alert.info("Canceled  !")
+                                }
+                            }
                             />
                         </PayPalScriptProvider>
                         {/* <button className='paybutton stripe'>Stripe</button>

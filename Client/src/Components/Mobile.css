@@ -2,18 +2,16 @@
     /*Topbar*/
     .udefree{
         font-size:5.5vw;
-        
     }
     .avatar{
         height: 35px;
         width: 35px;
         object-fit: cover;
         border-radius: 50%;
-       
     }
 
     .top{
-        
+        background-color: brown;
     }
     .topbar{
         height: 90vh;
@@ -29,18 +27,20 @@
     .middle{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .middlerigth{
-        width:90%;
-       height: 300px;
-        
+       width:90%;
+       height: auto;
+       margin: auto;
+       margin-left: 45px;
     }
     .middleleft{
         color: white;
         font-size: 3.8vw;
         font-weight: bold;
-       /* background-color: rgb(255, 255, 255);*/
-        width: 90%;
+        width: 90%; 
     }
     .desc{
         color: rgb(255, 255, 255);
@@ -105,12 +105,6 @@
     }
     .filteroptions{
         width: 50%;
-    }
-
-    /*course*/
-    .Couses{
-        margin-top:10px;
-        width:95%;
     }
 
     /*footer*/
@@ -219,4 +213,59 @@
     }
 
     
+}
+
+
+@media all and (max-width: 1040px){
+    .Couses{
+        margin-top:5px;
+        width:30%
+    }
+}
+
+@media all and (max-width: 835px){
+    .Couses{
+        margin-top:5px;
+        width:35%
+    }
+}
+
+@media all and (max-width: 735px){
+    .Couses{
+        margin-top:5px;
+        width:40%
+    }
+}
+
+@media all and (max-width: 650px){
+    .Couses{
+        margin-top:5px;
+        width:40%
+    }
+
+    .list{
+        width: 100%;
+    }
+}
+@media all and (max-width: 550px){
+    .Couses{
+        margin-top:5px;
+        width:70%
+    }
+
+    .list{
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 450px){
+    .Couses{
+        margin-top:5px;
+        width:95%;
+        height: 280px;
+    }
+
+    .list{
+        width: 100%;
+    }
 }

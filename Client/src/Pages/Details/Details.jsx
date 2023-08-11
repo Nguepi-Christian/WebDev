@@ -16,7 +16,7 @@ const Top = () => {
         </div>
     )
 }
-
+var i = 0;
 function Details() {
 
     const [course , setCourse] = useState(null)
@@ -63,17 +63,17 @@ function Details() {
 
             <div className='DetailsLeft'>
                 <div className='itemmlearn'>
-                    <p className='itemdesc'>
-                        <h2>Description</h2>
-                        {course &&  course[0].description}
-                    </p>
+                   
+                    <h2 className=''><font color="orange">Description</font> : <br /></h2>
+                     <p className='itemdesc'>{course &&  course[0].description}</p>   
+                   
                     <p className='waylearn'>After this Course Students can:</p>
                 
                     <div className='learnlist'>
-                        <ul className='listskill'>
+                        <ul className='listskill' >
                         {
                             course && course[0].what_you_will_learn.map((item) => (
-                                <li>{item}</li>
+                                <li key={i++}>{item}</li>
                             ))
                         }
                             
@@ -88,7 +88,7 @@ function Details() {
                         
                         {
                             course && course[0].part.map((item) => (
-                                <div className='partskill'>
+                                <div className='partskill' key={i++}>
                                     <span>{item.name}</span>
                                     <span>Size : 443MB</span>
                                 </div>

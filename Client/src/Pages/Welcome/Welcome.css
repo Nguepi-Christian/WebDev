@@ -116,7 +116,16 @@
     font-size: 20px;
     color: rgb(0, 0, 0);
     font-weight: 500;
+    font-weight: normal;
+    font-style: italic;
+    text-align: justify;
     
+}
+.onedesc>p{
+    list-style-type: none;
+    font-weight: normal;
+    font-style: italic;
+    text-align: justify;
 }
 
 .oneimg{
@@ -127,13 +136,20 @@
 }
 
 .oneimgcontainer{
-    height: 300px;
+    height: auto;
     width: 100%;
     background-color: rgb(255, 255, 255);
     margin: auto;
-    margin-top: 20px;
-   
 }
+
+.scroll{
+    display: flex;
+    height: 200px;
+    overflow-x: scroll;
+    gap: 5px;
+    width: 90%;
+}
+
 
 .lets{
     border-radius: 0%;
@@ -153,7 +169,7 @@
 
     }
     .welcomeBody{
-        width: 95%;
+        width: 90%;
     }
 
     .onetitle{
@@ -161,10 +177,11 @@
     }
     .onedesc{
         font-size: 3.8vw;
+       ;
     }
 
     .oneimgcontainer{
-        height: 180px;
+        height: auto;
         width: 100%;
     }
     .Startnow{
@@ -178,7 +195,7 @@
         font-size: 8vw;
     }
     .welcomeTop{
-        height: 90vh;
+        height: 70vh;
         width: 100%;
     }
     .welcometopbar{
@@ -213,6 +230,10 @@
 
     .onedesc{
         font-weight: 500;
+        font-weight: 500;
+        font-weight: normal;
+        font-style: italic;
+        text-align: justify
     }
   
 }

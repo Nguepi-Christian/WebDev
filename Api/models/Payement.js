@@ -14,9 +14,11 @@ const Payement = new mongoose.Schema({
     author:{
         type:String
     },
-    
-
-},{ timestamps: true }
+    userid : {
+        type : String
+    },
+},
+{ timestamps: true }
 )
 
 export default mongoose.model("Payement",Payement);

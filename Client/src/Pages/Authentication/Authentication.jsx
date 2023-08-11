@@ -4,17 +4,18 @@ import { loginCall } from "../../ApiCalls.js"
 import { api } from '../../Config'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Context/AuthContext';
+import { positions, useAlert  } from 'react-alert'
 
 export default function Authentication() {
     const [login,setLogin] = useState(true)
     const [register,setRegister] = useState(false)
     const navigate = useNavigate()
-
+    const alert = useAlert()
     
-    const {user , dispatch} = useContext(AuthContext)
+    
 
     const  Login =  () =>{
-
+        const {user,isFetching,dispatch} = useContext(AuthContext)
         const email = useRef()
         const password = useRef()
 
@@ -24,16 +25,15 @@ export default function Authentication() {
               
                 await loginCall({email : email.current.value,password : password.current.value},dispatch)
                 
-                if(user != null){
+                if(user !== null){
                     navigate('/homepage')
-                  
+                    alert.success("Connection done ...")
                 }else{
-                    alert("no user found ...")
-                    
+                    alert.error("Please try again ...")
                 }
 
             }else{
-                alert('empty input(s) !')
+                alert.info('empty input(s) !')
             }
 
         }
@@ -51,9 +51,18 @@ export default function Authentication() {
                     <form  method="post" className='form' onSubmit={login}>
                         <input type="email" ref={email} placeholder='Your email' className='forminput'/>
                         <input type="password" ref={password} placeholder='Your password' className='forminput'/>
-                        <button className='formbutton' type = 'submit'>Submit</button>
+
+                        <button className='formbutton' type = 'submit'>
+                            {isFetching ? (
+                                "login..."
+                            ) : (
+                                "Submit"
+                            )}
+                        </button>
                         <p align='center'><i>You don't have account ?</i></p>
-                        <span  className='formbutton' onClick={(e)=>Switch('register')} >Register</span>
+                        <span  className='formbutton' onClick={(e)=>Switch('register')} >
+                            Register
+                        </span>
                     </form>
 
                   
@@ -99,13 +108,14 @@ export default function Authentication() {
                     
                     if(res.statusText === "OK"){
                         setIsOpen(true)
+                        alert.success("Register done ...")
                     }
                 } catch (error) {
-                    alert("register error ! try again")
+                    alert.error("register error ! try again")
                 }
                 
             }else{
-                alert('empty inputs !')
+                alert.info('empty inputs !')
             }
         }
 

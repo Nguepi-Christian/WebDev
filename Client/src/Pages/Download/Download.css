@@ -1,8 +1,8 @@
 .Download{
-    width: 70%;
+    width: 60%;
     min-height: 90vh;
-    border-left: solid 2px rgb(180, 180, 180);
-    border-right: solid 2px rgb(180, 180, 180);
+    border-left: solid 1px rgb(231, 231, 231);
+    border-right: solid 1px rgb(231, 231, 231);
     margin: auto;
     display: flex;
     align-items: center;
@@ -17,24 +17,36 @@
     background-color: blue;
     display: flex;
     align-items: center;
+    
 }
 
 .cousedownloadbox{
-    width: 90%;
-    height: 35px;
-    border-radius: 0px;
-    border-bottom: solid 1px rgb(186, 186, 186);
+    width: 95%;
+    border-radius: 5px;
+    border: solid 1px rgb(0, 0, 0);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-   
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
 }
-
+.cousedownloadbox>span{
+    margin-left:8px;
+}
 
 @media all and (max-width: 650px){
     .Download{
         width: 100%;
-        border-left: solid 0px rgb(129, 129, 129);
-        border-right: solid 0px rgb(129, 129, 129);
+ 
+    }
+
+    .cousedownloadbox{
+        width: 95%;
+        height: auto;
+        border-radius: 3px;
+        border: solid 1px rgb(127, 127, 127);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
     }
 }

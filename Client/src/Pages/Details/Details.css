@@ -99,13 +99,13 @@
     padding: 10px;
     display: flex;
     margin: auto;
-    width: 85%;
+    width: 80%;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
-    border: solid 1px rgb(157, 157, 157);
+    border: solid 1px rgb(0, 0, 0);
     border-radius: 5px;
     flex-direction: column;
-    height: 350px;
+    height: 260px;
     justify-content: space-between;
 }
 

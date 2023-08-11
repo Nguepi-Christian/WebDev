@@ -1,9 +1,15 @@
 import mongoose from 'mongoose';
 
 const mongoConnection = () =>{
-     mongoose.connect("mongodb+srv://gopepeter:azerty@free.rtxn2k4.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true},()=>{
-     console.log("Connected to mongoDB ");
-    })
+    try {
+            mongoose.connect("mongodb://127.0.0.1:27017/wahtsapp", {useNewUrlParser: true},()=>{
+            console.log("Connected to mongoDB");
+        })
+    } catch (error) {
+       console.log(error) 
+    }
+     
+    
 };
 
 export default mongoConnection;
