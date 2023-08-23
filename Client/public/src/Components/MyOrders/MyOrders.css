@@ -1,0 +1,63 @@
+.Orders{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 90vh;
+    overflow-y: scroll;
+    gap: 10px;
+}
+
+.order{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 0px 2px 2px rgb(220, 220, 220);
+    height: 120px;
+    border-radius: 5px;
+    width: 49%;
+    margin-bottom: auto;
+    margin-top: 5px;
+}
+.order>span{
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.ordertop{
+    height: 70px;
+    background-color: blue;
+    color:white;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.ordertoptitle{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+@media all and (max-width: 650px){
+    
+    
+    .order{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        border-radius: 5px;
+        width: 90%;
+        margin: auto;
+    }
+    .order>span{
+        margin-left: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 8px;
+    }
+    .ordertop{
+        height: 50px;
+        font-size: 14px;
+    }
+
+}

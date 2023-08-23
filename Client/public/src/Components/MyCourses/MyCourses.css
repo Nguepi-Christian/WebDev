@@ -1,0 +1,199 @@
+
+/* .textinput{
+  margin-top: 10px;
+  height: 30px;
+  border: solid 1px rgb(138, 138, 138);
+  border-radius: 5px;
+}
+.textinput:focus{
+  outline: none;
+  border: solid 2px rgb(96, 133, 255);
+}
+
+  .Search{
+    margin-top: 25px;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    margin: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 3px 3px rgb(245, 245, 245);
+  }
+
+  .inputSearch{
+        border: solid 1px rgb(238, 238, 238);
+        width: 80%;
+        height: 35px;
+        box-shadow: 0px 0px 2px 2px rgb(241, 241, 241);
+        border-radius: 3px;
+  }
+
+  .inputSearch:focus{
+    outline: none;
+    border: solid 1px rgb(101, 130, 184);
+  }
+
+
+  .SearchButton{
+    height:35px;
+    width: 100px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(180, 180, 255);
+    border: none;
+    box-shadow: 0px 0px 2px 2px rgb(241, 241, 241);
+  }
+
+
+  .Table{
+    margin-top: 50px;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+  }
+
+  .tr,.td,.th{
+    border: 1px solid rgb(255, 255, 255);
+    height: 40px;
+  }
+  .tr,.td{
+    text-align: center;
+    font-weight: 500;
+    font-size:14px;
+  }
+
+  .th{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(0, 34, 255);
+  }
+
+  .td{
+    font-style: 14px;
+  }
+  
+  .Actions{
+    width: 10%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .action{
+    font-weight: 600;
+    font-size:16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+  .delete{
+    background-color: rgb(255, 118, 118);
+    border: none;
+  }
+
+  .update{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: white;
+    width: 150px;
+    height: 35px;
+  } */
+.MyCourses{
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+.usercourseitem{
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  margin: auto;
+  margin-top: 10px;
+  border: solid 1px rgb(215, 215, 215);
+  border-radius: 5px;
+  gap: 10px;
+  cursor: pointer;
+  height: auto;
+}
+.courseitemtitle{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  border: solid 0px rgb(87, 87, 87);
+  margin: auto;
+}
+
+.classpart{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin: auto;
+   gap: 10px;
+}
+.classpartitem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  height: 35px;
+  border: solid 2px rgb(223, 223, 223);
+  border-radius: 5px;
+}
+
+
+  @media all and (max-width: 650px){
+    .usercourseitem{
+      width: 90%;
+    }
+
+    /*table*/
+   /*  .tr,.td,.th{
+      border: 1px solid rgb(216, 216, 216);
+      height: 15px;
+    }
+    .tr,.td{
+      text-align: center;
+      font-weight: 600;
+      font-size:3vw;
+      height: 15px;
+    }
+  
+    .th{
+      font-size: 3vw;
+      font-weight: 600;
+      color: rgb(183, 106, 255);
+    }
+  
+    .td{
+      font-style: 1vw;
+      
+    }
+    .update{
+      background-color: rgb(49, 177, 70);
+      border: none;
+      color: white;
+      width: 100px;
+      height: 25px;
+      font-size: 14px;
+    }
+    .Search{
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .inputSearch{
+      height: 25px;
+    }
+
+    .SearchButton{
+      height: 25px;
+      font-size: 3.5vw;
+      border-radius: 3px;
+    } */
+
+  }

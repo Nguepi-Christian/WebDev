@@ -1,0 +1,52 @@
+.Download{
+    width: 60%;
+    min-height: 90vh;
+    border-left: solid 1px rgb(231, 231, 231);
+    border-right: solid 1px rgb(231, 231, 231);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+.topdownloaddetails{
+    top: 0;
+    position: sticky;
+    height: 70px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    
+}
+
+.cousedownloadbox{
+    width: 95%;
+    border-radius: 5px;
+    border: solid 1px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.cousedownloadbox>span{
+    margin-left:8px;
+}
+
+@media all and (max-width: 650px){
+    .Download{
+        width: 100%;
+ 
+    }
+
+    .cousedownloadbox{
+        width: 95%;
+        height: auto;
+        border-radius: 3px;
+        border: solid 1px rgb(127, 127, 127);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

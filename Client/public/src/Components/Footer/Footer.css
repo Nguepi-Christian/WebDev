@@ -1,0 +1,83 @@
+.Footercontainer{
+    margin-top: 125px;
+    background-color: rgb(0, 0, 0);
+}
+
+.FooterSocial{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 60px;
+   background-color: rgb(32, 32, 32);
+}
+
+
+
+
+.useraccount{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.social>img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.FooterOthers>span{
+   color: rgb(255, 255, 255);
+   height: 25px;
+  
+}
+
+.FooterOthers{
+    padding: 0px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    width: 15%;
+    flex-direction: column;
+ }
+
+ .offer{
+   font-weight: 600;
+   font-size: 20px;
+   color: white;
+ }
+
+ .OhtersContainer{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-evenly;
+ }
+
+
+ .footerbottom{
+    height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .footerudefree{
+    color: white;
+    cursor:pointer;
+ }
+
+
+ .username{
+    color: white;
+    text-align: justify;
+    font-size: 20px;
+    margin: 5px;
+ }
+
+ .copy{
+    color: white;
+ }
+
