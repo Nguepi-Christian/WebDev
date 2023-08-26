@@ -1,0 +1,73 @@
+.Maincontainer{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-register{
+   height: 450px;
+   box-shadow: 0px 0px 5px 5px rgb(211, 211, 211);
+   border-radius: 10px;
+    display: flex;
+   align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 35%;
+}
+
+
+.textregister{
+    font-size: 1.9vw;
+    font-weight: 600;
+}
+
+
+.register-email{
+    width: 70%;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border: solid 2px rgb(190, 190, 190);
+    border-radius: 5px;
+}
+.register-email:focus{
+    outline: none;
+    border: solid 2px rgb(124, 148, 255);
+}
+
+
+.register-password{
+    width: 70%;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border: solid 2px rgb(190, 190, 190);
+    border-radius: 5px;
+}
+
+.register-password:focus{
+    outline: none;
+    border: solid 2px rgb(124, 148, 255);
+}
+
+.forget{
+    color: blue;
+    font-weight: 600;
+    font-size: 1.4vw;
+}
+.picture{
+    width: 70%;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border: solid 1px rgb(190, 190, 190);
+    border-radius: 5px;
+}
+.laelphoto{
+    color: rgb(65, 65, 255);
+    font-weight: 600;
+    font-size: 1.35vw;
+    cursor: pointer;
+}

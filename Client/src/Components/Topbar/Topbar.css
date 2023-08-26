@@ -1,0 +1,16 @@
+.Topbar{
+    height : 60px;
+    width : 100%;
+    background-color: rgb(94, 97, 250);
+    display: flex;
+    align-items: center;
+}
+
+.Apptitle{
+    font-size: 1.6vw;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+}
+

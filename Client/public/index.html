@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <style>
+    * {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    .e-schedule .e-date-header-wrap .e-schedule-table thead {
+           display: none;
+    }
+    #body:nth-child(6){
+      background-color: black;
+    }
+ 
+  </style>
+  <title>Time Manager</title>
+</head>
+
+<body id="body" >
+  <noscript>You need to enable JavaScript </noscript>
+  <div id="root"></div>
+</body>
+
+<script  >
+  const body = document.getElementById("body");
+  const bodychild = body.childElementCount
+  const divtoremove = body.children[5]
+  body.removeChild(divtoremove)
+ 
+</script>
+
+
+
+</html>

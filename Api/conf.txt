@@ -1,0 +1,32 @@
+     part1
+
+      id : args.data.Id ,
+      description : descriptionElement.value,
+      event : statusElement.value ,
+      subject : subjectElement.value,
+      StartTime : startObj.current.value,
+      EndTime : endObj.current.value,
+      recurrence : recurrObject.current.value
+
+
+      part2
+      const data_to_save = {
+      	filiere : filiere.current.value ,
+      	niveau : niveau.current.value ,
+      	faculte :faculte.current.value ,
+      	spacialite : spacialite.current.value ,
+      	semestre  : semestre.current.value ,
+      	data : eventSettings.dataSource
+      }
+
+      part3
+	Id = intMax + 1,
+        StartTime = startTime.ToLocalTime(),
+        EndTime = endTime.ToLocalTime(),
+        Subject = value.Subject,
+        IsAllDay = value.IsAllDay,
+        StartTimezone = value.StartTimezone,
+        EndTimezone = value.EndTimezone,
+        RecurrenceRule = value.RecurrenceRule,
+        RecurrenceID = value.RecurrenceID,
+        RecurrenceException = value.RecurrenceException

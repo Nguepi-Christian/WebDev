@@ -1,0 +1,78 @@
+.logincontainer{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: aliceblue;
+}
+
+.form{
+    height: 320px;
+    box-shadow: 0px 0px 2px 2px rgb(207, 207, 207);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%;
+    background-color: white;
+}
+.textlogin{
+    font-size: 22px;
+    font-weight: 600;
+   
+}
+.loginemail,.loginpassword{
+    width:80%;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border: solid 1px rgb(192, 192, 192);
+    border-radius: 5px;
+}
+
+.loginemail:focus,.loginpassword:focus{
+    outline: none;
+    border: solid 1px rgb(124, 148, 255);
+}
+
+.loginsetting{
+    font-weight: 600;
+    font-size: 1.2vw;
+    width: 80%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forget{
+    cursor: pointer;
+    color: rgb(128, 168, 243);
+    font-size: 1.2vw;
+}
+
+.connection{
+    width: 70%;
+    height: 35px;
+    background-color: rgb(72, 72, 252);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.error{
+    background-color: rgb(247, 137, 137);
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img{
+  
+}

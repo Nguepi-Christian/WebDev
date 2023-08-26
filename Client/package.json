@@ -1,0 +1,56 @@
+{
+  "name": "new",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@syncfusion/ej2-react-calendars": "^21.2.6",
+    "@syncfusion/ej2-react-dropdowns": "^21.2.6",
+    "@syncfusion/ej2-react-schedule": "^21.2.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^1.2.1",
+    "draft-js": "^0.11.7",
+    "http-proxy-middleware": "^2.0.6",
+    "react": "^18.2.0",
+    "react-big-calendar": "^1.6.9",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-material-card": "^0.0.2",
+    "react-modal": "^3.16.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.4.4",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

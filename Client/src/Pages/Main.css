@@ -1,0 +1,62 @@
+.typemain{
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.accounttype{
+    height: 120px;
+    width: 170px;
+    box-shadow: 0px 0px 10px 10px rgb(222, 228, 235);
+    cursor: pointer;
+    background-color: rgb(66, 66, 194);
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.accounttype:hover{
+    box-shadow: 0px 0px 10px 10px rgb(182, 255, 164);
+ 
+}
+.typeaccount{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+}
+
+
+.notification {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .notification p {
+    margin: 0;
+  }
+  
+  .notification.success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+  }
+  
+  .notification.error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+  }
+  
