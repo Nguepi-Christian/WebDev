@@ -21,10 +21,8 @@ app.use(
   }))
 
 /* Storage path */
-app.use(express.static('public'))
-
 /* Upload image */
-
+/* 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
@@ -43,11 +41,11 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   } catch (error) {
     console.error(error);
   }
-});
+}); */
 /* end */
 
 /* Setting middlewares */
-app.use(express.static('public'))
+app.use("/api",express.static('public'))
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));

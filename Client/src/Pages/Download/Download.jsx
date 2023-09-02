@@ -16,12 +16,12 @@ function Download() {
   }
 
 
-  const CourseDownload = ({index,name,link}) =>{
+  const CourseDownload = ({index,name,link,size}) =>{
     return (
     
         <div className='cousedownloadbox' key={index}>
           <span><i> {name}</i></span>
-          <span><i> Size</i> : --</span>
+          <span><i> Size</i> : {size}</span>
           <span><font color='blue'><i><a href={link}>Save</a></i></font></span>
         </div>
       
@@ -71,7 +71,7 @@ function Download() {
           </h2>
             { 
               course && course.part.map(item => (
-                  <CourseDownload key={i++} name = {item.name} link = {item.link}/> 
+                  <CourseDownload key={i++} name = {item.name} link = {item.link} size = {item.size}/> 
                 )
               )
             }  

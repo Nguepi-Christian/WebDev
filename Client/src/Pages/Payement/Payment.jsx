@@ -122,7 +122,7 @@ function Payment() {
                                         console.log(error)
                                     }
 
-                                    alert.success("Done! go to your accout",{
+                                    alert.success("Done! go to your account",{
                                         timeout : 20000
                                     })
                                     /* const alertMessage = `Trasaction was Sussessfull done You can now go to your page to download Course.
@@ -161,7 +161,7 @@ function Payment() {
             <div className='paymentright'>
                <div className='resume'>
                  <h2 className='resumeitem'>Resume</h2>
-                 <h4 className='resumeitem'>Prix  : ${course && course[0].actual_price}</h4>
+                 <h4 className='resumeitem'>Price  : ${course && course[0].actual_price}</h4>
                  <hr />
                  <h4 className='resumeitem'>Total : ${course && course[0].actual_price}</h4>
                </div>

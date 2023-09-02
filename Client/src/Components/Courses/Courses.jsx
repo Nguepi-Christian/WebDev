@@ -1,19 +1,22 @@
 import React from 'react'
 import './Courses.css'
 import { Link } from "react-router-dom"
+import { api } from '../../Config.js'
 
 function Courses({data}) {
+
+
   return (
     <div className='Couses'>
 
         <div className='Courseimg'>
-            <img alt="" src="./img/3.jpg"  className='coverimg'/>
+            <img alt="" src={api.defaults.baseURL+"/images/courses/"+data.image}  className='coverimg'/>
         </div>
 
         <div className='Coursedescription'>
             <span className='Title'>{data.name}</span>
             <span className='CourseAuthor'><b>Author</b> : {data.creator}</span>
-            <span className='note'><b>Note</b> : {data.students} /5</span>
+            {/* <span className='note'><b>Note</b> : {data.students}/5</span> */}
             <span className='price'>${data.actual_price}</span>
         </div>
 

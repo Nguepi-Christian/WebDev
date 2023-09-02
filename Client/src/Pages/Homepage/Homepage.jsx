@@ -8,8 +8,6 @@ import { useContext, useState } from "react"
 //import Modal from "../../Components/Modal/Modal"
 import { AuthContext } from "../../Context/AuthContext"
 import { useNavigate } from "react-router-dom"
-import { ClearLocalStorage } from '../../ApiCalls.js'
-
 
 function Homepage() {
 

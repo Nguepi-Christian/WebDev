@@ -24,19 +24,19 @@ export default function CoursesList() {
 
   const filter = (option , expression , langage , data) => {
     
-    
     if(expression !== ""){
       return (
-        data.filter((item) => item.name.toLowerCase().includes(expression) && 
-                    (item.langage.toLowerCase()===langage))
+        data.filter((item) => item.name.includes(expression) && 
+                    (item.langage===langage))
       )
     }
+    
     if(option === "all"){
       return data
     }else{
       return (
-        data.filter((item) => item.category.toLowerCase() === option && 
-                    (item.langage.toLowerCase()===langage))
+        data.filter((item) => item.category === option && 
+                    (item.langage === langage))
       )
     }
   }
@@ -52,19 +52,19 @@ export default function CoursesList() {
                 <span className='filtertitile'>Category </span>
                 <select name="" id="" className='options' onChange={(e) => setOPtion(e.target.value)}>
                   <option value="all">All</option>
-                  <option value="programming">Programming</option>
-                  <option value="web devloppement">Web Devloppement</option>
-                  <option value="game developement<">Game Developement</option>
-                  <option value="python">Python</option>
-                  <option value="machine learning">Machine Learning</option>
-                  <option value="java">Java Courses</option>
-                  <option value="javascript">JavaScript Courses</option>
-                  <option value="dataStructures">DataStructures</option>
-                  <option value="algorithms">Algorithms</option>
-                  <option value="cybersecurity">Cybersecurity </option>
-                  <option value="bug bounty">Bug Bounty</option>
-                  <option value="nodejs">Nodejs</option>
-                  <option value="php">Php</option>
+                  <option value="Web Devloppement">Web Devloppement</option>
+                  <option value="Mobile Devloppement">Mobile Devloppement</option>
+                  <option value="Game Developement">Game Developement</option>
+                  <option value="Python">Python</option>
+                  <option value="Machine Learning">Machine Learning / AI</option>
+                  <option value="java">Java</option>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="Finances">Finances</option>
+                  <option value="Graphic">Graphic</option>
+                  <option value="Data Structures">DataStructures and Algorithms</option>
+                  <option value="Cybersecurity">Cybersecurity </option>
+                  <option value="Network">Network </option>
+                  <option value="Marketing">Marketing </option>
                 </select>
             </div>
 
@@ -97,21 +97,6 @@ export default function CoursesList() {
               ))
             ) 
           }
-          {
-            (
-              filter(option,expression,langage,courses).map((item)=>(
-                <Courses data={item} key={item._id}/>
-              ))
-            ) 
-          }
-          {
-            (
-              filter(option,expression,langage,courses).map((item)=>(
-                <Courses data={item} key={item._id}/>
-              ))
-            ) 
-          }
-
         </div>
 
     </div>

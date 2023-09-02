@@ -48,7 +48,7 @@ function Details() {
                 </h1>
                
 
-                <span className='itemperson'>Note : {course && course[0].students} /5</span>
+                {/* <span className='itemperson'>Note : {course && course[0].students} /5</span> */}
                 {/* <span className='itemdate'>Derniere Mise a jours :23/04/2023 a 13h26 min</span> */}
                 <span className='itemauthor'>Author : {course && course[0].creator}</span>
             </div>
@@ -82,15 +82,13 @@ function Details() {
                 </div>
                 <div className='itempart'>
                
-                    <p className='partlearn'>Part of this cours</p>
-                
-                   
-                        
+                    <p className='partlearn'>Part of this course</p>
+
                         {
                             course && course[0].part.map((item) => (
                                 <div className='partskill' key={i++}>
                                     <span>{item.name}</span>
-                                    <span>Size : 443MB</span>
+                                    <span>Size : {item.size}</span>
                                 </div>
                             ))
                         }
@@ -102,7 +100,9 @@ function Details() {
             <div className='Detailsright'>
                 <div className='checkoutdetails'>
                     <div className='Courseimg'>
-                        <img alt="" src="../../img/3.jpg"  className='coverimg'/>
+                        {
+                            course && (<img alt="" src={api.defaults.baseURL+"/images/courses/"+course[0].image}  className='coverimg'/>)
+                        }
                     </div>
 
                     <div className='Coursedescription'>
