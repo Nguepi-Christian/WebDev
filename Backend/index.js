@@ -9,8 +9,11 @@ import {ConnectToMongoDB} from "./Extras/MongoDB.js"
 import { RequestInfo } from './Extras/RequestInfo.js';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
-import swaggerDoc from "./swagger.json" with {type :'json'};
-
+//import swaggerDoc from "./swagger.json" with {type :'json'};
+import { readFile } from 'fs/promises';
+const swaggerDoc = JSON.parse(
+  await readFile(new URL('./swagger.json', import.meta.url))
+);
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
