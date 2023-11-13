@@ -1,25 +1,36 @@
 import Post from "../models/Post.js";
 
-
-
 /*
     Use this route to  Create a new post
 */
 export const CreatePost = async(req,res)=>{
-   
+    
     try {
-        const newPost = new Post({ 
-            userId:req.body.userid,
-            region:req.body.region,
-            description:req.body.description,
-            phone_number:req.body.phone_number,
-            price:req.body.price,
-            type:req.body.type,
-            images:req.body.images
-        })
+        
+        if(req.files.length > 0){
 
-        await newPost.save();
-        res.status(200).json(newPost)
+            var img = []
+            const filelist = req.files;
+
+            filelist.map( i => (
+                img.push(i.filename)
+            ));
+    
+            const newPost = new Post({ 
+                userId:req.body.userid,
+                region:req.body.region,
+                description:req.body.description,
+                phone_number:req.body.phone_number,
+                price:req.body.price,
+                type:req.body.type,
+                images : img 
+            })
+            
+            await newPost.save();
+            res.status(201).json(newPost)
+        }else{
+            res.status(400).json(" You most provide images ")
+        }
 
     } catch (error) {
         console.log(error)
@@ -33,8 +44,20 @@ export const CreatePost = async(req,res)=>{
 export const UpdatePost = async(req,res)=>{
    
     try {
-        const updatePost = await Post.findByIdAndUpdate(req.body.postid,
-            {$set:
+        if(req.files.length > 0){
+            var img = []
+            const filelist = req.files;
+
+            filelist.map( i => (
+                img.push(i.filename)
+            )); 
+
+            req.body.images = img ;
+        }
+        
+        const updatedPost = await Post.findByIdAndUpdate(req.body.postid,
+            {
+                $set:
                 {   type:req.body.type,
                     region:req.body.region,
                     phone_number:req.body.phone_number,
@@ -42,8 +65,11 @@ export const UpdatePost = async(req,res)=>{
                     description:req.body.description,
                     images:req.body.images  
             }
-        },{new : true})
-        res.status(200).json(updatePost)
+        },
+            {new : true}
+        ) 
+
+        res.status(201).json(updatedPost)
     } catch (error) {
         res.status(200).json(error)
     }
@@ -84,42 +110,53 @@ export const GetPostByUser = async(req,res)=>{
 */
 export const findPost = async(req,res)=>{
     try {
-        const query = req.query.param;
-        const price = req.query.price
-        const region = req.query.region;
-        const type = req.query.type;
+/* 
+        const query = req.query.query ;
+        const price = req.query.price ;
+        const region = req.query.region ;
+        const type = req.query.type ; */
+        const { query , priceMin, priceMax , region, type } = req.query;
 
-        const data = {
-            query,
-            price,
-            region,
-            type
+        const params = {}
+
+        if(query){
+            params.description = new RegExp(query,"i");
         }
-
-        const post = [];
-
-        if(price && region && type){
-            console.log(data)
-        }else{
-        post = await Post.find(
-            {
-                description:{$regex : query , $options :"i"},
-                price:price,
-                type:type,
-                region:region
-            })
+        if(region){
+            params.region = new RegExp(region,"i");
         }
+        if(type){
+            params.type = new RegExp(type,"i");
+        }
+        if(priceMin && priceMax){
+            params.price = {$gte : priceMin  , $lte : priceMax} 
+        }
+        if(priceMin){
+            params.price = {$gte : priceMin} 
+        } 
+        if(priceMax){
+            params.price = {$lte : priceMin} 
+        } 
+         
+        //http://localhost:8000/api/post/findpost?query=Dype&price=3000&region=ty&type=modern
+        
+        const post = await Post.find(params);
+
+
+        console.log(post)
         if(post.length === 0){
             res.status(403).json("no posts found !");
         }
         else{
+            //Search our 
+
+
              res.status(200).json(post);
         }
     } catch (error) {
         res.status(500).json(error)
     }
 }
-
 
 /* 
     Use This route to load a post given the id
@@ -143,7 +180,16 @@ export const findPostbyId = async(req,res)=>{
 */
 export const GetAllPost = async(req,res)=>{
     try {
+
+        const start = req.query.start || 0;
+       // const end = req.query.end || 10;
+        const limit = req.query.limit || 10;
+
+
         const post = await Post.find()
+        .limit(limit)
+        .skip(start)
+
         if(post.length === 0){
             res.status(403).json("no posts found  !");
         }else{
@@ -155,11 +201,11 @@ export const GetAllPost = async(req,res)=>{
 }
 
 export const Upload_File = (req , res)=> {
-    
     try {
-      console.log("done")
       return res.status(200).json("Files uploded successfully");
     } catch (error) {
       console.error(error);
     }
-  };
+};
+
+

@@ -24,7 +24,7 @@ export const verify_token  = (req , res , next) =>{
     if(auth_token){
 
         jwt.verify(auth_token , JWT_SECT_KEY,(err , payload) =>{
-            if(err) res.status(403).json("not valid !")
+            if(err) res.status(403).json(" authorization requiere!")
 
             req.user = payload ;
             next()
@@ -46,3 +46,17 @@ export const verify_token  = (req , res , next) =>{
           }
     })
 }*/
+
+
+const verify_creentials = (email , password) =>{
+
+    //check the input
+    //validate the input
+
+}
+
+const ClearImagesFilesAfterUpdate = (images) => {
+
+    //read the [images] 
+    //Scan folder and delete that file
+}

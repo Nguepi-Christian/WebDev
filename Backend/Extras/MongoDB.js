@@ -1,12 +1,9 @@
 import mongoose from "mongoose"
 
 const DB_name = "immo"
-const URL = "mongodb+srv://gopepeter:azerty@free.rtxn2k4.mongodb.net/"
+const URL = "mongodb://127.0.0.1:27017/"
 const FullUrl = URL + DB_name
 
-/* Use this function to create a connection to your database
-   -change the db name to access in other databse 
-*/
 export const ConnectToMongoDB = () => {
     try {
         mongoose.connect(FullUrl , {useNewUrlParser: true}).then(()=>{

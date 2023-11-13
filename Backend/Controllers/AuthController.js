@@ -3,21 +3,29 @@ import bcrypt  from "bcrypt";
 import { CreateToken } from "../Extras/Security.js";
 
 export const Register = async (req,res)=>{
+
    try {
 
     const findUser = await User.findOne({email:req.body.email});
-
+  
         if(!findUser){
-            const salt=bcrypt.genSaltSync(10)
-            const hashpwd = bcrypt.hashSync(req.body.password , salt)
 
-            const newUser= new User({
-                    username:req.body.username,
-                    password:hashpwd,
+            const salt = bcrypt.genSaltSync(10)
+            const hashpwd = bcrypt.hashSync(req.body.password , salt)
+            
+            const newUser = new User({
+                    firstname:req.body.firstname,
+                    lastname:req.body.lastname ,
+                    password: hashpwd,
+                    phone:req.body.phone,
                     email:req.body.email,
-                    profilePicture:req.body.profilePicture
+                    phone:req.body.phone
             });
 
+            if(req.file){
+                newUser.profilePicture = req.file.filename;
+            }
+            
             await newUser.save();
             res.status(200).json("user created !");
         }else{

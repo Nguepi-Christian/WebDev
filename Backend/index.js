@@ -8,12 +8,8 @@ import path from "path"
 import {ConnectToMongoDB} from "./Extras/MongoDB.js"
 import { RequestInfo } from './Extras/RequestInfo.js';
 import swaggerUi from 'swagger-ui-express';
-import swaggerJsdoc from 'swagger-jsdoc';
-//import swaggerDoc from "./swagger.json" with {type :'json'};
-import { readFile } from 'fs/promises';
-const swaggerDoc = JSON.parse(
-  await readFile(new URL('./swagger.json', import.meta.url))
-);
+import swaggerDoc from "./swagger.json" assert {type :'json'};
+
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -48,3 +44,4 @@ app.listen(8000,()=>{
     console.log(" - API Runnging on port 8000");
     //ApiDoc(app,8000)
 })
+

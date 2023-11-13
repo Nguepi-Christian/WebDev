@@ -3,27 +3,32 @@ const {Schema}=mongoose;
 
 //User Schema
 const UserSchema=new mongoose.Schema({
-     username:{
+     firstname:{
         type:String,
         require:true,
-        min:3,
-        max:20,
         unique:false
+     },
+     lastname:{
+      type:String,
+      require:true,
+      unique:false
      },
      email:{
         type:String,
         require:true,
-        max:50,
         unique:true
      },
      password:{
         type:String,
         require:true,
-        min:6
+     },
+     phone:{
+      type:Number,
+      require:true,
      },
      profilePicture:{
         type:String,
-        default:"cover.png"
+        default:"noAvatar.png"
      },
 },
 {timestamps:true}
