@@ -8,7 +8,7 @@ import path from "path"
 import {ConnectToMongoDB} from "./Extras/MongoDB.js"
 import { RequestInfo } from './Extras/RequestInfo.js';
 import swaggerUi from 'swagger-ui-express';
-import swaggerDoc from "./swagger.json";
+import swaggerDoc from "./swagger.json" assert {type:'json'};
 
 const app = express();
 
