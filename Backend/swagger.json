@@ -19,7 +19,7 @@
     },
     "servers":[
       {
-        "host":"http://localhost:8000"
+        "url":"http://localhost:8000"
       }
     ],
     "security":{
@@ -33,7 +33,7 @@
 	],
 	
 	"paths": {
-    "/post/all": {
+    "/api/post/all": {
       "get": {
         "tags": ["Posts"],
         "summary": " Get all Posts ",
@@ -133,7 +133,7 @@
         }
 			}
 		},
-    "/post/update": {
+    "/api/post/update": {
 			"post": {
         "security":{
           "bearerAuth":[]
@@ -191,7 +191,7 @@
         }
 			}
 		},
-    "/post/delete/{postid}": {
+    "/api/post/delete/{postid}": {
       "delete": {
         "tags": ["Posts"],
         "summary": "Delete Post by id ",
@@ -217,7 +217,7 @@
         }
       }
     },
-    "/post/find": {
+    "/api/post/find": {
       "get": {
         "tags": ["Posts"],
         "summary": "Find Post ",
@@ -272,7 +272,7 @@
         }
       }
     },
-    "/post/user/{userid}": {
+    "/api/post/user/{userid}": {
       "get": {
         "tags": ["Posts"],
         "summary": "Get post by user",
@@ -298,7 +298,7 @@
         }
       }
     },
-    "/post/posts/{postid}": {
+    "/api/post/posts/{postid}": {
       "get": {
         "tags": ["Posts"],
         "summary": "Get post by Id",
@@ -324,7 +324,7 @@
         }
       }
     },
-    "/auth/login": {
+    "/api/auth/login": {
       "post": {
         "tags": ["Users"],
         "summary": "User : Login",
@@ -358,7 +358,7 @@
       ]
       }
     },
-    "/auth/register": {
+    "/api/auth/register": {
       "post": {
         "tags": ["Users"],
         "summary": "User : Register User",
@@ -401,7 +401,7 @@
       }
     },
     
-    "/user/update": {
+    "/api/user/update": {
       "post": {
         "tags": ["Users"],
         "summary": "User : Update User",
