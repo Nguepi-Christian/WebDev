@@ -8,8 +8,10 @@ import path from "path"
 import {ConnectToMongoDB} from "./Extras/MongoDB.js"
 import { RequestInfo } from './Extras/RequestInfo.js';
 import swaggerUi from 'swagger-ui-express';
-import swaggerDoc from "./swagger.json" assert {type:'json'};
-
+//import swaggerDoc from "./swagger.json" assert {type:'json'};
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const swaggerDoc = require('./swagger.json');
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
