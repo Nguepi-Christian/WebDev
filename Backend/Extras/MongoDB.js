@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 const DB_name = "immo"
-const URL = "mongodb+srv://gopepeter:azerty@free.rtxn2k4.mongodb.net"
+const URL = "mongodb+srv://gopepeter:azerty@free.rtxn2k4.mongodb.net/"
 const FullUrl = URL + DB_name
 
 export const ConnectToMongoDB = () => {
