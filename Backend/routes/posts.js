@@ -9,7 +9,8 @@ import
 	GetPostByUser,
 	GetAllPost,
 	findPostbyId,
-	Upload_File
+	Upload_File,
+	GetRandomPost
 } from "../Controllers/PostController.js"
 import { verify_token } from "../Extras/Security.js";
 import {  IMG_LENGTH_SIZE, UPLOAD_POST_PHOTO} from "../Extras/Multer.Upload.images.js";
@@ -35,6 +36,10 @@ router.get ("/find",findPost);
 router.get ("/posts/:postid",findPostbyId);
 
 router.get ("/all",GetAllPost);
+
+//get random post
+router.get("/random",GetRandomPost)
+
 
 //create post
 //router.post("/file/upload", verify_token , UPLOAD.single("file",IMG_LENGTH_SIZE), Upload_File );
