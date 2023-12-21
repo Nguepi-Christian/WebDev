@@ -145,7 +145,7 @@ export const findPost = async(req,res)=>{
 
         console.log(post)
         if(post.length === 0){
-            res.status(403).json("no posts found !");
+            res.status(404).json("no posts found !");
         }
         else{
             //Search our 
@@ -200,6 +200,22 @@ export const GetAllPost = async(req,res)=>{
     }
 }
 
+/* get random posts */
+export const GetRandomPost = async (req, res) => {
+  try {
+    const size = parseInt(req.query.size) || 10;
+    console.log(size)
+    const post = await Post.aggregate([{ $sample: { size: size } }]);
+
+    if (post.length === 0) {
+      res.status(404).json("no posts found  !");
+    } else {
+      res.status(200).json(post);
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 export const Upload_File = (req , res)=> {
     try {
       return res.status(200).json("Files uploded successfully");
