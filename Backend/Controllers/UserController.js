@@ -1,10 +1,13 @@
 import express from "express";
 import User from  "../models/User.js"
+import bcrypt from "bcrypt"
 
 //Update User
 export const UpdateUser = async (req , res) =>{
-
+console.log(req.body)
         try {
+
+            
 
             if(req.file){
                 req.body.profilePicture = req.file.filename ;

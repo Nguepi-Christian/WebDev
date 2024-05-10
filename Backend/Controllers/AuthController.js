@@ -22,9 +22,9 @@ export const Register = async (req,res)=>{
                     phone:req.body.phone
             });
 
-            if(req.file){
+           /* if(req.file){
                 newUser.profilePicture = req.file.filename;
-            }
+            }*/
             
             await newUser.save();
             res.status(200).json("user created !");
@@ -33,7 +33,7 @@ export const Register = async (req,res)=>{
         }
     
    } catch (error) {
-    res.status(500).json("internal error or invalid request params .try again whit another data")
+    res.status(500).json(error)
    }
 }
   
