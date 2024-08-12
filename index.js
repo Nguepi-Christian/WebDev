@@ -34,7 +34,9 @@ app.use("/api/auth",authroute)
 app.use("/api/user",userroute)
 app.use("/api/post",postroute)
  
-
+app.get("/",()=>{
+  console.log("home")
+})
 
 
 
