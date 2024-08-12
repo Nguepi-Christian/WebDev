@@ -52,4 +52,4 @@ app.listen(8000,()=>{
     console.log(" - API Runnging on port 8000");
     //ApiDoc(app,8000)
 })
-
+module.exports = app
