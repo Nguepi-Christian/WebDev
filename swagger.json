@@ -1,0 +1,506 @@
+{
+	"openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API Documentation ImmoLink",
+    "description": "Restfull webservice Application",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "components":{
+      "securitySchemes":{
+       "bearerAuth":{
+          "type":"http",
+          "scheme":"bearer",
+          "bearerFormat":"JWT"
+       }
+      }
+    },
+    "servers":[
+      {
+        "host":"http://localhost:8000"
+      }
+    ],
+    "security":{
+      "bearerAuth":[]
+    }
+
+  },
+  "basePath": "/api",
+	"tags": [
+		
+	],
+	
+	"paths": {
+    "/post/all": {
+      "get": {
+        "tags": ["Posts"],
+        "summary": " Get all Posts ",
+        "parameters":[
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "description": "the result(s) start index .by default start = 0",
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "the result(s) limit number . by default limit = 10",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": " OK "
+          },
+          "403":{
+            "description":" NO POSTS FOUND ! "
+          },
+          "500":{
+            "description":" ERROR "
+          }
+        }
+      }
+    },
+		"/post/create": {
+			"post": {    
+				"tags": ["Posts"],
+				"summary": "Create Post (auth token require)",
+				"produces": ["application/json"],
+        "consumes":[
+          "multipart/form-data"
+        ],
+        "security":{
+          "BearerAuth":[]
+        },
+				"parameters": [
+            {
+              "name": "auth_token",
+              "in": "headers",
+              "required": true,
+              "description": " Auth token to do this action"
+            },
+            {
+              "name": "file",
+              "in": "formData",
+              "type":"file",
+              "required": true,
+              "description": " Home Pictures  limit are 8"
+            },
+					{
+						"name": "Request exmple",
+						"required": ["userid", "region", "description","price","type"],
+						"in": "body",
+						"properties": {
+							"userid": {
+								"$ref": "#/definitions/userid"
+							},
+							"region": {
+								"$ref": "#/definitions/region"
+							},
+              "description": {
+								"$ref": "#/definitions/description"
+							},
+							"price": {
+								"$ref": "#/definitions/price"
+							},
+              "type": {
+								"$ref": "#/definitions/type"
+							},
+              "images": {
+								"$ref": "#/definitions/images"
+							}
+						}
+					}
+				],
+				"responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403":{
+            "description":"Token not valid !"
+          },
+          "401":{
+            "description":"You are not authenticated!"
+          },
+          "500":{
+            "description":"error"
+          }
+        }
+			}
+		},
+    "/post/update": {
+			"post": {
+        "security":{
+          "bearerAuth":[]
+        },
+				"tags": ["Posts"],
+				"summary": "Update Post (auth token require)",
+				"produces": ["application/json"],
+				"parameters": [
+            {
+              "name": "auth_token",
+              "in": "headers",
+              "required": true,
+              "description": " Auth token to do this action"
+            },
+            {
+              "name": "Request Body",
+              "required": ["postid", "region", "description","price","type","images"],
+              "in": "body",
+              "properties": {
+                "postid": {
+                  "type": "string",
+                  "example": "profile.jpg"
+                },
+                "region": {
+                  "$ref": "#/definitions/region"
+                },
+                "description": {
+                  "$ref": "#/definitions/description"
+                },
+                "price": {
+                  "$ref": "#/definitions/price"
+                },
+                "type": {
+                  "$ref": "#/definitions/type"
+                },
+                "images": {
+                  "$ref": "#/definitions/images"
+                }
+              }
+            }
+				],
+				"responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403":{
+            "description":"Token not valid !"
+          },
+          "401":{
+            "description":"You are not authenticated!"
+          },
+          "500":{
+            "description":"error"
+          }
+        }
+			}
+		},
+    "/post/delete/{postid}": {
+      "delete": {
+        "tags": ["Posts"],
+        "summary": "Delete Post by id ",
+        "parameters":[
+          {
+            "name": "postid",
+            "in": "path",
+            "required": true,
+            "description": "Id of the post",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          },
+          "403":{
+            "description":"no posts found  !"
+          },
+          "500":{
+            "description":"error"
+          }
+        }
+      }
+    },
+    "/post/find": {
+      "get": {
+        "tags": ["Posts"],
+        "summary": "Find Post ",
+        "parameters":[
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "description": "the user input",
+            "type": "string"
+          },
+          {
+            "name": "priceMin",
+            "in": "query",
+            "required": false,
+            "description": "the min price",
+            "type": "string"
+          },
+          {
+            "name": "priceMax",
+            "in": "query",
+            "required": false,
+            "description": "the Max price",
+            "type": "string"
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "required": false,
+            "description": "The Region ",
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "The type (Studio , Hotel etc)",
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          },
+          "403":{
+            "description":"no posts found  for that request !"
+          },
+          "500":{
+            "description":" Error "
+          }
+        }
+      }
+    },
+    "/post/user/{userid}": {
+      "get": {
+        "tags": ["Posts"],
+        "summary": "Get post by user",
+        "parameters":[
+          {
+            "name": "userid",
+            "in": "path",
+            "required": true,
+            "description": "Id of the user",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          },
+          "403":{
+            "description":"no posts found  !"
+          },
+          "500":{
+            "description":"error"
+          }
+        }
+      }
+    },
+    "/post/posts/{postid}": {
+      "get": {
+        "tags": ["Posts"],
+        "summary": "Get post by Id",
+        "parameters":[
+          {
+            "name": "postid",
+            "in": "path",
+            "required": true,
+            "description": "Id of the post",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          },
+          "403":{
+            "description":"no posts found  !"
+          },
+          "500":{
+            "description":"error"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "User : Login",
+        "parameters": [
+          {
+            "name": "Request Body",
+            "required": ["password","email"],
+            "in": "body",
+            "properties":{
+              "password": {
+                "type": "string",
+                "example": "5c0728badc70ea3dec00d8e6fzefzefjzefoh"
+              },
+              "email": {
+                "type": "string",
+                "example": "immo@gmail.com"
+              }
+          },
+          "responses": {
+            "200": {
+              "description": " Ok "
+            },
+            "403":{
+              "description":"no user found  !"
+            },
+            "500":{
+              "description":"error"
+            }
+          }
+        }
+      ]
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "User : Register User",
+        "parameters": [
+          {
+            "name": "Request Body",
+            "required": ["password", "username","email"],
+            "in": "body",
+            "properties":{
+              "password": {
+                "type": "string",
+                "example": "5c0728badc70ea3dec00d8e6fzefzefjzefoh"
+              },
+              "profilePicture": {
+                "type": "string",
+                "example": "profile.jpg"
+              },
+              "username": {
+                "type": "string",
+                "example": "Kings immo"
+              },
+              "email": {
+                "type": "string",
+                "example": "immo@gmail.com"
+              }
+          },
+          "responses": {
+            "200": {
+              "description": "ok"
+            },
+            "403":{
+              "description":"no posts found  !"
+            },
+            "500":{
+              "description":"error"
+            }
+          }
+        }
+      ]
+      }
+    },
+    
+    "/user/update": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "User : Update User",
+        "parameters": [
+          {
+            "name": "Request Body",
+            "required": ["firstname","lastname","phone","email"],
+            "in": "body",
+            "properties":{
+              "password": {
+                "type": "string",
+                "example": "5c0728badc70ea3dec00d8e6fzefzefjzefoh"
+              },
+              "profilePicture": {
+                "type": "string",
+                "example": "profile.jpg"
+              },
+              "firstname": {
+                "type": "string",
+                "example": "Kings immo"
+              },
+              "lastname": {
+                "type": "string",
+                "example": "Kings immo"
+              },
+              "email": {
+                "type": "string",
+                "example": "immo@gmail.com"
+              }
+          },
+          "responses": {
+            "200": {
+              "description": "ok"
+            },
+            "403":{
+              "description":"no posts found  !"
+            },
+            "500":{
+              "description":"error"
+            }
+          }
+        }
+      ]
+      }
+    }
+	},
+	"definitions": {
+		"userid": {
+			"type": "string",
+			"description": "User  ID",
+			"example": "5c0728badc70ea3dec00d8e6"
+		},
+		"region": {
+			"type": "string",
+			"description": "region or location of the house",
+			"example": "Center , West etc "
+		},
+		"description": {
+			"type": "string",
+			"description": "Give some description about house like the number of betrooms ,the kitchens etc ",
+			"example": "Moder house including 3 betrooms etc"
+		},
+		"phone_number": {
+			"type": "Number",
+			"description": " User Phone number",
+			"example": "6 98 90 09 09"
+		},
+    "price": {
+			"type": "Number",
+			"description": "this price of the house",
+			"example": "35000 xfa etc "
+		},
+    "type": {
+			"type": "string",
+			"description": "Type of house : Studio , Modern House",
+			"example": "Studio"
+		},
+    "images": {
+			"type": "[file]",
+			"description": "Array of images in the post , this array contain the image file name that are saved in the db",
+			"example": ["Maison.jpg","studion.jpg","012123_simbock.png"]
+		},
+		"error": {
+			"type": "object",
+			"description": "Error data",
+			"properties": {
+				"msg": {
+					"type": "string",
+					"description": "Error message",
+					"example": "User not found"
+				}
+			}
+		},
+		"business_exception": {
+			"type": "array",
+			"description": "Error array",
+			"items": {
+				"$ref": "#/definitions/error"
+			}
+		}
+	}
+}
